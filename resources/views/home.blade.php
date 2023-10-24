@@ -318,9 +318,9 @@
 
       <!-- ====== Video Section Start -->
       <section
-        x-data="{ videoOpen: false, videoSrc: 'https://youtu.be/2qgS_MCvDfk'}"
-        class="bg-white py-20 lg:py-[120px]"
-      >
+            x-data="{ videoOpen: false, videoSrc: 'https://youtu.be/2qgS_MCvDfk'}"
+            class="bg-white py-20 lg:py-[120px]"
+        >
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap justify-center">
             <div class="w-full px-4 lg:w-10/12">
@@ -329,7 +329,7 @@
               >
                 <div class="absolute top-0 left-0 h-full w-full">
                   <img
-                    src="assets/images/videos/image-01.jpg"
+                    src="{{ asset('images/videos/image-01.jpg') }}"
                     alt="image"
                     class="h-full w-full object-cover object-center"
                   />
@@ -750,8 +750,8 @@
 
       <!-- ====== Pricing Section Start -->
       <section
-        class="lg:pt- [120px] relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pb-[90px]"
-      >
+            class="lg:pt- [120px] relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pb-[90px]"
+        >
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap">
             <div class="w-full px-4">
@@ -760,13 +760,12 @@
                   Pricing Table
                 </span>
                 <h2
-                  class="mb-4 text-3xl font-bold text-dark sm:text-4xl md:text-[40px]"
+                  class="mb-4 text-2xl font-bold text-dark sm:text-2xl md:text-[40px]"
                 >
-                  Our Pricing Plan
+                Choose the plan that works for you
                 </h2>
                 <p class="text-base text-body-color">
-                  There are many variations of passages of Lorem Ipsum available
-                  but the majority have suffered alteration in some form.
+                    Our Team understands the security and safety of there investors funds That's why we are offering New range of Investment Packages with 100% Principal Return
                 </p>
               </div>
             </div>
@@ -778,44 +777,38 @@
                 class="relative z-10 mb-10 overflow-hidden rounded-xl border border-pink-600 border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
               >
                 <span class="mb-4 block text-lg font-semibold text-pink-600">
-                  Personal
+                    BASIC
                 </span>
                 <h2 class="mb-5 text-[42px] font-bold text-dark">
-                  $59
-                  <span class="text-base font-medium text-body-color">
-                    / year
-                  </span>
+                    $30 - $499
                 </h2>
                 <p
-                  class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color"
-                >
-                  Perfect for using in a personal website or a client project.
-                </p>
+                class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color"
+              >
+              </p>
                 <div class="mb-7">
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    1 User
+                    30% After 24 Hours
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    All UI components
+                    Daily Earnings
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Lifetime access
+                    24 Hours Return
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Free updates
+                    Instant Withdrawal
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Use on 1 (one) project
-                  </p>
-                  <p class="mb-1 text-base leading-loose text-body-color">
-                    3 Months support
+                    24/7 Support
+
                   </p>
                 </div>
                 <a
                   href="javascript:void(0)"
                   class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-pink-600 transition hover:border-pink-600 hover:bg-pink-600 hover:text-white"
                 >
-                  Choose Personal
+                  Choose Basic
                 </a>
 
                 <div>
@@ -1094,44 +1087,37 @@
                 class="relative z-10 mb-10 overflow-hidden rounded-xl border border-pink-600 border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
               >
                 <span class="mb-4 block text-lg font-semibold text-pink-600">
-                  Business
+                    GOLD
                 </span>
                 <h2 class="mb-5 text-[42px] font-bold text-dark">
-                  $199
-                  <span class="text-base font-medium text-body-color">
-                    / year
-                  </span>
+                    $500 - $999
                 </h2>
                 <p
                   class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color"
                 >
-                  Perfect for using in a Business website or a client project.
                 </p>
                 <div class="mb-7">
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    5 Users
+                    50% After 48 Hours
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    All UI components
+                    Daily Earnings
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Lifetime access
+                    48 Hours Return
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Free updates
+                    Instant Withdrawal
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Use on 3 (Three) project
-                  </p>
-                  <p class="mb-1 text-base leading-loose text-body-color">
-                    4 Months support
+                    24/7 Support
                   </p>
                 </div>
                 <a
                   href="javascript:void(0)"
                   class="block w-full rounded-md border border-pink-600 bg-pink-600 p-4 text-center text-base font-semibold text-white transition hover:bg-opacity-90"
                 >
-                  Choose Business
+                  Choose Gold
                 </a>
 
                 <div>
@@ -1410,45 +1396,37 @@
                 class="relative z-10 mb-10 overflow-hidden rounded-xl border border-pink-600 border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
               >
                 <span class="mb-4 block text-lg font-semibold text-pink-600">
-                  Professional
+                    MASTER
                 </span>
                 <h2 class="mb-5 text-[42px] font-bold text-dark">
-                  $256
-                  <span class="text-base font-medium text-body-color">
-                    / year
-                  </span>
+                    $1000 - $1999
                 </h2>
                 <p
                   class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color"
                 >
-                  Perfect for using in a Professional website or a client
-                  project.
                 </p>
                 <div class="mb-7">
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Unlimited Users
+                    80% After 72 Hours
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    All UI components
+                    Daily Earnings
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Lifetime access
+                    72 Hours Return
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Free updates
+                    Instant Withdrawal
                   </p>
                   <p class="mb-1 text-base leading-loose text-body-color">
-                    Use on Unlimited project
-                  </p>
-                  <p class="mb-1 text-base leading-loose text-body-color">
-                    12 Months support
+                    24/7 Support
                   </p>
                 </div>
                 <a
                   href="javascript:void(0)"
                   class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-pink-600 transition hover:border-pink-600 hover:bg-pink-600 hover:text-white"
                 >
-                  Choose Professional
+                  Choose Master
                 </a>
 
                 <div>
@@ -1754,7 +1732,7 @@
               <div class="mx-auto mb-10 w-full max-w-[370px]">
                 <div class="relative overflow-hidden rounded-lg">
                   <img
-                    src="assets/images/team/team-01/image-01.jpg"
+                    src="{{ asset('images/team/team-01/image-01.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
@@ -1944,7 +1922,7 @@
               <div class="mx-auto mb-10 w-full max-w-[370px]">
                 <div class="relative overflow-hidden rounded-lg">
                   <img
-                    src="assets/images/team/team-01/image-02.jpg"
+                    src="{{ asset('images/team/team-01/image-02.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
@@ -2134,7 +2112,7 @@
               <div class="mx-auto mb-10 w-full max-w-[370px]">
                 <div class="relative overflow-hidden rounded-lg">
                   <img
-                    src="assets/images/team/team-01/image-03.jpg"
+                    src="{{ asset('images/team/team-01/image-03.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
@@ -2324,7 +2302,7 @@
               <div class="mx-auto mb-10 w-full max-w-[370px]">
                 <div class="relative overflow-hidden rounded-lg">
                   <img
-                    src="assets/images/team/team-01/image-04.jpg"
+                    src="{{ asset('images/team/team-01/image-04.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
@@ -2517,18 +2495,18 @@
 
       <!-- ====== FAQ Section Start -->
       <section
-        x-data="
-                {
-                openFaq1: false,
-                openFaq2: false,
-                openFaq3: false,
-                openFaq4: false,
-                openFaq5: false,
-                openFaq6: false
-                }
-            "
-        class="relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]"
-      >
+            x-data="
+                    {
+                    openFaq1: false,
+                    openFaq2: false,
+                    openFaq3: false,
+                    openFaq4: false,
+                    openFaq5: false,
+                    openFaq6: false
+                    }
+                "
+            class="relative z-20 overflow-hidden bg-white pt-20 pb-12 lg:pt-[120px] lg:pb-[90px]"
+        >
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap">
             <div class="w-full px-4">
@@ -2944,7 +2922,7 @@
                         class="relative mb-12 w-full max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16"
                       >
                         <img
-                          src="assets/images/testimonials/testimonial-01/image-01.jpg"
+                          src="{{ asset('images/testimonials/testimonial-01/image-01.jpg') }}"
                           alt="image"
                           class="w-full"
                         />
@@ -3232,7 +3210,7 @@
                         <div>
                           <div class="mb-7">
                             <img
-                              src="assets/images/testimonials/testimonial-01/lineicon.svg"
+                              src="{{ asset('images/testimonials/testimonial-01/lineicon.svg') }}"
                               alt="lineicon"
                             />
                           </div>
@@ -3263,7 +3241,7 @@
                         class="relative mb-12 w-full max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16"
                       >
                         <img
-                          src="assets/images/testimonials/testimonial-01/image-01.jpg"
+                          src="{{ asset('images/testimonials/testimonial-01/image-01.jpg') }}"
                           alt="image"
                           class="w-full"
                         />
@@ -3551,7 +3529,7 @@
                         <div>
                           <div class="mb-7">
                             <img
-                              src="assets/images/testimonials/testimonial-01/lineicon.svg"
+                              src="{{ asset('images/testimonials/testimonial-01/lineicon.svg') }}"
                               alt="lineicon"
                             />
                           </div>
@@ -3582,7 +3560,7 @@
                         class="relative mb-12 w-full max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16"
                       >
                         <img
-                          src="assets/images/testimonials/testimonial-01/image-01.jpg"
+                          src="{{ asset('images/testimonials/testimonial-01/image-01.jpg') }}"
                           alt="image"
                           class="w-full"
                         />
@@ -3870,7 +3848,7 @@
                         <div>
                           <div class="mb-7">
                             <img
-                              src="assets/images/testimonials/testimonial-01/lineicon.svg"
+                              src="{{ asset('images/testimonials/testimonial-01/lineicon.svg') }}"
                               alt="lineicon"
                             />
                           </div>
@@ -3941,8 +3919,8 @@
 
       <!-- ====== Contact Section Start -->
       <section
-        class="overflow-hidde relative z-10 bg-slate-50 py-20 lg:py-[120px]"
-      >
+            class="overflow-hidde relative z-10 bg-slate-50 py-20 lg:py-[120px]"
+        >
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap lg:justify-between">
             <div class="w-full px-4 lg:w-1/2 xl:w-6/12">
@@ -4922,7 +4900,7 @@
               <div class="mx-auto mb-10 max-w-[370px]">
                 <div class="mb-8 overflow-hidden rounded">
                   <img
-                    src="assets/images/blogs/blog-01/image-01.jpg"
+                    src="{{ asset('images/blogs/blog-01/image-01.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
@@ -4952,7 +4930,7 @@
               <div class="mx-auto mb-10 max-w-[370px]">
                 <div class="mb-8 overflow-hidden rounded">
                   <img
-                    src="assets/images/blogs/blog-01/image-02.jpg"
+                    src="{{ asset('images/blogs/blog-01/image-02.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
@@ -4982,7 +4960,7 @@
               <div class="mx-auto mb-10 max-w-[370px]">
                 <div class="mb-8 overflow-hidden rounded">
                   <img
-                    src="assets/images/blogs/blog-01/image-03.jpg"
+                    src="{{ asset('images/blogs/blog-01/image-03.jpg') }}"
                     alt="image"
                     class="w-full"
                   />
