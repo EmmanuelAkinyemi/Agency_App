@@ -3960,7 +3960,7 @@
                       Our Location
                     </h4>
                     <p class="text-base text-body-color">
-                      99 S.t Jomblo Park Pekanbaru 28292. Indonesia
+                        175 Latchmere Road, London, England, SW11 2JZ
                     </p>
                   </div>
                 </div>
@@ -4015,7 +4015,7 @@
                     <h4 class="mb-1 text-xl font-bold text-dark">
                       Email Address
                     </h4>
-                    <p class="text-base text-body-color">info@yourdomain.com</p>
+                    <p class="text-base text-body-color">support@massprofit.com</p>
                   </div>
                 </div>
               </div>

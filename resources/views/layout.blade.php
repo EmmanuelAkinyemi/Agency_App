@@ -89,14 +89,13 @@
     <footer class="relative z-10 bg-slate-50 pt-20 pb-10 lg:pt-[120px] lg:pb-20">
         <div class="container mx-auto">
             <div class="-mx-4 flex flex-wrap">
-                <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
+                <div class="w-full px-4 sm:w-2/3 lg:w-4/12">
                     <div class="mb-10 w-full">
                         <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
                             <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="max-w-full" />
                         </a>
                         <p class="mb-7 text-base text-body-color">
-                            Sed ut perspiciatis undmnis is iste natus error sit amet
-                            voluptatem totam rem aperiam.
+                            We provide a unique opportunity to make profits online, based on our innovative developments that allow us to conduct risk-free bot trading on the largest cryptocurrency and stock exchanges.
                         </p>
                         <p class="flex items-center text-sm font-medium text-dark">
                             <span class="mr-3 text-pink-700">
@@ -113,7 +112,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                {{-- <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
                     <div class="mb-10 w-full">
                         <h4 class="mb-9 text-lg font-semibold text-dark">Resources</h4>
                         <ul>
@@ -143,15 +142,15 @@
                             </li>
                         </ul>
                     </div>
-                </div>
-                <div class="w-full px-4 sm:w-1/2 lg:w-2/12">
+                </div> --}}
+                <div class="w-full px-4 sm:w-1/2 lg:w-3/12">
                     <div class="mb-10 w-full">
                         <h4 class="mb-9 text-lg font-semibold text-dark">Company</h4>
                         <ul>
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    About TailGrids
+                                    About Us
                                 </a>
                             </li>
                             <li>
@@ -163,13 +162,13 @@
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Success History
+                                    Login
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Setting & Privacy
+                                    Sign Up
                                 </a>
                             </li>
                         </ul>
@@ -182,25 +181,25 @@
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Premium Support
+                                    Partnership
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Our Services
+                                    Privacy Policy
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Know Our Team
+                                    Terms & Conditions
                                 </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Download App
+                                    FAQs
                                 </a>
                             </li>
                         </ul>
