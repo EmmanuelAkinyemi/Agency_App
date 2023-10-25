@@ -3919,7 +3919,7 @@
 
       <!-- ====== Contact Section Start -->
       <section
-            class="overflow-hidde relative z-10 bg-slate-50 py-20 lg:py-[120px]"
+            class="rounded-lg overflow-hidde relative z-10 bg-slate-50 py-20 lg:py-[120px]"
         >
         <div class="container mx-auto">
           <div class="-mx-4 flex flex-wrap lg:justify-between">
@@ -3934,9 +3934,10 @@
                   GET IN TOUCH WITH US
                 </h2>
                 <p class="mb-9 text-base leading-relaxed text-body-color">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eius tempor incididunt ut labore et dolore magna aliqua. Ut
-                  enim adiqua minim veniam quis nostrud exercitation ullamco
+                    Let’s talk about your investment and how we can make it happen.
+                    This is the beginning of creating the life that you want to live.
+                    Need assistance?
+                    We provide a unique opportunity to make profits online, based on our innovative developments that allow us to conduct risk-free bot trading on the largest cryptocurrency and stock exchanges.
                 </p>
 
                 <div class="mb-8 flex w-full max-w-[370px]">

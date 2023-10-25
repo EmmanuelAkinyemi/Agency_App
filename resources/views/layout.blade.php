@@ -45,19 +45,19 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/about.html"
+                                        <a href="about"
                                             class="flex py-2 text-base font-medium text-dark hover:text-pink-600 lg:ml-12 lg:inline-flex">
                                             About
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/Services.html"
+                                        <a href="services"
                                             class="flex py-2 text-base font-medium text-dark hover:text-pink-600 lg:ml-12 lg:inline-flex">
                                             Services
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/contact.html"
+                                        <a href="contact"
                                             class="flex py-2 text-base font-medium text-dark hover:text-pink-600 lg:ml-12 lg:inline-flex">
                                             Contact
                                         </a>
@@ -92,7 +92,7 @@
                 <div class="w-full px-4 sm:w-2/3 lg:w-3/12">
                     <div class="mb-10 w-full">
                         <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
-                            <img src="assets/images/logo/logo.png" alt="logo" class="max-w-full" />
+                            <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="max-w-full" />
                         </a>
                         <p class="mb-7 text-base text-body-color">
                             Sed ut perspiciatis undmnis is iste natus error sit amet

@@ -18,4 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+//index page for the agency app
 Route::get('/', [PageController::class, 'index']);
+
+//about page for the agency
+Route::get('/about', [PageController::class, 'about']);
