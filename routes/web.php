@@ -23,3 +23,6 @@ Route::get('/', [PageController::class, 'index']);
 
 //about page for the agency
 Route::get('/about', [PageController::class, 'about']);
+
+//about page for the agency
+Route::get('/services', [PageController::class, 'services']);
