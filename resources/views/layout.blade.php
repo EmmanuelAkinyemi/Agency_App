@@ -18,7 +18,7 @@
         <header x-data="{
             navbarOpen: false,
             }"
-            class="absolute left-0 top-0 z-50 w-full">
+            class="absolute bg-white left-0 top-0 z-50 w-full">
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
                     <div class="w-60 max-w-full px-4">

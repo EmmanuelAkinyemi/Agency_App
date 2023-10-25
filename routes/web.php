@@ -24,5 +24,9 @@ Route::get('/', [PageController::class, 'index']);
 //about page for the agency
 Route::get('/about', [PageController::class, 'about']);
 
-//about page for the agency
+//services page for the agency
 Route::get('/services', [PageController::class, 'services']);
+
+//
+Route::get('/contact', [PageController::class, 'contact']);
+
