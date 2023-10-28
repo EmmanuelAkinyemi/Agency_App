@@ -11,7 +11,7 @@
           >
             <div class="mb-10 text-center md:mb-16">
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="mx-auto inline-block max-w-[160px]"
               >
                 <img src="{{ asset('images/logo/logo.png') }}" alt="logo" />
@@ -50,7 +50,7 @@
             <p class="text-base text-[#adadad]">
               Not a member yet?
               <a
-                href="/sign-up.html"
+                href="/signup"
                 class="text-purple-600 hover:underline"
               >
                 Sign Up

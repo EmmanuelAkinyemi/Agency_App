@@ -11,40 +11,64 @@
           >
             <div class="mb-10 text-center md:mb-16">
               <a
-                href="javascript:void(0)"
+                href="/"
                 class="mx-auto inline-block max-w-[160px]"
               >
                 <img src="{{ asset('images/logo/logo.png') }}" alt="logo" />
               </a>
             </div>
-            <form>
+            <form method="POST" action="/users">
+                @csrf
               <div class="mb-6">
                 <input
                   type="text"
-                  placeholder="First Name"
-                  class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                  placeholder="Full Name"
+                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
               </div>
               <div class="mb-6">
                 <input
                   type="text"
-                  placeholder="Last Name"
-                  class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                  placeholder="username"
+                  name="username"
+                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
+                @error('username')
+                <span class="text-base text-red-500 mt-1">{{ $message }}</span>
+                @enderror
               </div>
               <div class="mb-6">
                 <input
                   type="text"
                   placeholder="Email"
-                  class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                  name="email"
+                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
+                @error('email')
+                <span class="text-base text-red-500 mt-1">{{ $message }}</span>
+                @enderror
               </div>
               <div class="mb-6">
                 <input
                   type="password"
                   placeholder="Password"
+                  name="password"
                   class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
+                @error('password')
+                <span class="text-base text-red-500 mt-1">{{ $message }}</span>
+                @enderror
+              </div>
+              <div class="mb-6">
+                <input
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="password_confirmation"
+                  class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                />
+                @error('password_confirmation')
+                <span class="text-red-500 text-base mt-1">{{ $message }}</span>
+                @enderror
               </div>
               <div class="mb-10">
                 <input
