@@ -67,11 +67,11 @@
                             </nav>
                         </div>
                         <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
-                            <a href="/sign-in.html"
+                            <a href="/signin"
                                 class="py-3 px-7 text-base font-medium text-dark hover:text-pink-600">
                                 Login
                             </a>
-                            <a href="/signup.html"
+                            <a href="/signup"
                                 class="rounded-lg bg-pink-600 py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
                                 Sign Up
                             </a>
