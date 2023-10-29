@@ -7,7 +7,7 @@
       <div class="-mx-4 flex flex-wrap">
         <div class="w-full px-4">
           <div
-            class="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-10 px-10 text-center sm:px-12 md:px-[60px]"
+            class="relative mx-auto max-w-[525px] overflow-hidden rounded-lg bg-white py-10 px-10 sm:px-12 md:px-[60px]"
           >
             <div class="mb-10 text-center md:mb-16">
               <a
@@ -23,18 +23,12 @@
                 <input
                   type="text"
                   placeholder="Full Name"
+                  name="name"
+                  value="{{ old('name') }}"
                   class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
-              </div>
-              <div class="mb-6">
-                <input
-                  type="text"
-                  placeholder="username"
-                  name="username"
-                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
-                />
-                @error('username')
-                <span class="text-base text-red-500 mt-1">{{ $message }}</span>
+                @error('name')
+                <span class="text-base mt-1 text-red-500">{{ $message }}</span>
                 @enderror
               </div>
               <div class="mb-6">
@@ -42,6 +36,7 @@
                   type="text"
                   placeholder="Email"
                   name="email"
+                  value="{{ old('email') }}"
                   class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
                 @error('email')
@@ -79,7 +74,7 @@
               </div>
             </form>
 
-            <p class="text-base text-[#adadad]">
+            <p class="text-base text-center text-[#adadad]">
               Already have an account?
               <a
                 href="/signin"

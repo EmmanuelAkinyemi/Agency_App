@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -40,8 +40,14 @@ Route::get('/contact', [PageController::class, 'contact']);
 **go in here
 **/
 Route::group(['middleware' => ['guest']], function () {
-    
-    Route::get('/signin', [AuthController::class, 'signin']);
 
-    Route::get('/signup', [AuthController::class, 'signup']);
+    Route::get('/signin', [UserController::class, 'signin']);
+
+    Route::get('/signup', [UserController::class, 'create']);
+
+    Route::post('/users', [UserController::class, 'store']);
 });
+
+
+    Route::get('/dashboard', [PageController::class, 'dashboard']);
+

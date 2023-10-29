@@ -8,14 +8,16 @@ use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
-class AuthController extends Controller
+class UserController extends Controller
 {
-    public function signin()
+    //shows the registration form
+    public function create()
     {
-        return view('auth.signin');
+        return view('auth.signup');
     }
 
-    public function createUser(Request $request)
+    //creates new user
+    public function store(Request $request)
     {
         $formsFields = $request->validate([
             'name' => ['required', 'min:3'],
@@ -29,13 +31,14 @@ class AuthController extends Controller
         //create user
         $user = User::create($formsFields);
 
+        auth()->login($user);
 
         return redirect("/dashboard")->with('success', 'Registration Successful');
     }
 
-    public function signup()
+    public function signin()
     {
-        return view('auth.signup');
+        return view('auth.signin');
     }
 
     public function authenticate(Request $request)

@@ -66,7 +66,19 @@
                                 </ul>
                             </nav>
                         </div>
+                        @auth
                         <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+                            <a href="/dashboard"
+                                class="py-3 px-7 text-base font-medium text-dark hover:text-pink-600">
+                                {{ auth()->user()->name }}
+                            </a>
+                            <a href="#"
+                                class="rounded-lg bg-pink-600 py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
+                                Account
+                            </a>
+                        </div>
+                        @else
+                          <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
                             <a href="/signin"
                                 class="py-3 px-7 text-base font-medium text-dark hover:text-pink-600">
                                 Login
@@ -76,6 +88,8 @@
                                 Sign Up
                             </a>
                         </div>
+                        @endauth
+
                     </div>
                 </div>
             </div>
