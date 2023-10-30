@@ -17,7 +17,8 @@
                 <img src="{{ asset('images/logo/logo.png') }}" alt="logo" />
               </a>
             </div>
-            <form>
+            <form method="POST" action="/users/authenticate">
+                @csrf
               <div class="mb-6">
                 <input
                   type="text"

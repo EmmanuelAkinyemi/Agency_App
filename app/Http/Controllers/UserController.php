@@ -36,7 +36,7 @@ class UserController extends Controller
         return redirect("/dashboard")->with('success', 'Registration Successful');
     }
 
-    public function signin()
+    public function login()
     {
         return view('auth.signin');
     }

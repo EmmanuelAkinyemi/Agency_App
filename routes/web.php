@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
+use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 //index page for the agency app
 Route::get('/', [PageController::class, 'index']);
 
+Route::get('/home', [PageController::class, 'index']);
+
+
 //about page for the agency
 Route::get('/about', [PageController::class, 'about']);
 
@@ -41,13 +45,20 @@ Route::get('/contact', [PageController::class, 'contact']);
 **/
 Route::group(['middleware' => ['guest']], function () {
 
-    Route::get('/signin', [UserController::class, 'signin']);
+    Route::post('/logout', [UserController::class, 'logout']);
+
+    Route::get('/login', [UserController::class, 'login'])->name('login');
+
+    Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
     Route::get('/signup', [UserController::class, 'create']);
 
     Route::post('/users', [UserController::class, 'store']);
 });
 
-
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [PageController::class, 'dashboard']);
+});
+
+
 
