@@ -30,4 +30,9 @@ class PageController extends Controller
     {
         return view('user.dashboard');
     }
+
+    public function admin()
+    {
+        return view('admin.dashboard');
+    }
 }
