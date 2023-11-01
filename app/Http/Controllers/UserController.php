@@ -33,7 +33,7 @@ class UserController extends Controller
 
         auth()->login($user);
 
-        return redirect("/dashboard")->with('success', 'Registration Successful');
+        return redirect("/dashboard")->with('message', 'Registration Successful');
     }
 
     public function login()
@@ -45,14 +45,14 @@ class UserController extends Controller
     {
         $formsFields = $request->validate([
             'email' => ['required', 'email'],
-            'password' => ['required']
+            'password' => 'required'
         ]);
 
-        if(Auth::attempt($formsFields))
+        if(auth()->attempt($formsFields))
         {
             $request->session()->regenerate();
 
-            return redirect('/dashboard')->with('success', 'successfully logged in');
+            return redirect('/dashboard')->with('message', 'You are now logged in');
         }
 
         return back()->withErrors(['email', 'Invalid Credentials'])->onlyInput('email');

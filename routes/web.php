@@ -38,6 +38,8 @@ Route::get('/contact', [PageController::class, 'contact']);
 //contact page for the agency
 Route::get('/privacy', [PageController::class, 'privacy']);
 
+
+
 //authentication pages
 
 /*
@@ -48,15 +50,16 @@ Route::get('/privacy', [PageController::class, 'privacy']);
 **/
 Route::group(['middleware' => ['guest']], function () {
 
-    Route::post('/logout', [UserController::class, 'logout']);
+    Route::get('/signup', [UserController::class, 'create']);
+
+    Route::post('/users', [UserController::class, 'store']);
 
     Route::get('/login', [UserController::class, 'login'])->name('login');
 
     Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
-    Route::get('/signup', [UserController::class, 'create']);
+    Route::post('/logout', [UserController::class, 'logout']);
 
-    Route::post('/users', [UserController::class, 'store']);
 });
 
 Route::group(['middleware' => ['auth']], function () {

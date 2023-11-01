@@ -19,6 +19,7 @@
             </div>
             <form method="POST" action="/users/authenticate">
                 @csrf
+
               <div class="mb-6">
                 <input
                   type="text"
@@ -31,6 +32,7 @@
                 <span class="text-base text-red-500 mt-1">{{ $message }}</span>
                 @enderror
               </div>
+
               <div class="mb-6">
                 <input
                   type="password"
@@ -43,6 +45,7 @@
                 <span class="text-base text-red-500 mt-1">{{ $message }}</span>
                 @enderror
               </div>
+              
               <div class="mb-10">
                 <input
                   type="submit"
