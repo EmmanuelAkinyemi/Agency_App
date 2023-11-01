@@ -35,6 +35,9 @@ Route::get('/services', [PageController::class, 'services']);
 //contact page for the agency
 Route::get('/contact', [PageController::class, 'contact']);
 
+//contact page for the agency
+Route::get('/privacy', [PageController::class, 'privacy']);
+
 //authentication pages
 
 /*
