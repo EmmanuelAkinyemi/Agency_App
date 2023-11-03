@@ -1,6 +1,18 @@
-@extends('layout')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MassProfit</title>
+    @vite('resources/css/app.css')
+    <link rel="shortcut icon" href="{{ asset('images/logo/icon.png') }}" type="image/x-icon" />
+
+
+</head>
+
+<body>
     <section class="px-4 py-24 mx-auto max-w-7xl mt-20 mb-10">
         <div class="mb-24 text-left md:text-center">
             <h1 class="mb-4 text-4xl font-bold leading-tight text-gray-900 md:text-5xl">Privacy Policy</h1>
@@ -169,4 +181,5 @@
         FUTURES
         Over 500 futures varieties from commodities to bonds on markets like CME, LIFFE, EUREX, etc.
     </section>
-@endsection
+</body>
+</html>

@@ -41,23 +41,37 @@ class UserController extends Controller
         return view('auth.signin');
     }
 
+    // public function authenticate(Request $request)
+    // {
+    //     $formsFields = $request->validate([
+    //         'email' => ['required', 'email'],
+    //         'password' => 'required'
+    //     ]);
+
+    //     if(auth()->attempt($formsFields))
+    //     {
+    //         $request->session()->regenerate();
+
+    //         return redirect('/dashboard')->with('message', 'You are now logged in');
+    //     }
+
+    //     return back()->with(['error', 'Invalid Credentials']);
+    // }
+
     public function authenticate(Request $request)
     {
-        $formsFields = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => 'required'
-        ]);
+        $credentials = [
+            'username' => $request->username,
+            'password' => $request->password
+        ];
 
-        if(auth()->attempt($formsFields))
+        if(Auth::attempt($credentials))
         {
-            $request->session()->regenerate();
-
-            return redirect('/dashboard')->with('message', 'You are now logged in');
+            return redirect('/dashboard')->with('message', 'succesfully logged in');
         }
 
-        return back()->withErrors(['email', 'Invalid Credentials'])->onlyInput('email');
+        return back()->with('error', 'Invalid Credentials');
     }
-
 
     public function logout(Request $request)
     {

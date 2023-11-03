@@ -16,8 +16,14 @@
               >
                 <img src="{{ asset('images/logo/logo.png') }}" alt="logo" />
               </a>
+
+              @if (Session::has('error'))
+                <div class="text-center text-red-500">
+                    {{ Session::get('error') }}
+                </div>
+              @endif
             </div>
-            <form method="POST" action="/users/authenticate">
+            <form method="POST" action="{{ route('login') }}">
                 @csrf
 
               <div class="mb-6">
@@ -26,7 +32,7 @@
                   placeholder="Email"
                   name="email"
                   value="{{ old('email') }}"
-                  class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
                 @error('email')
                 <span class="text-base text-red-500 mt-1">{{ $message }}</span>
@@ -39,13 +45,13 @@
                   placeholder="Password"
                   name="password"
                   value="{{ old('password') }}"
-                  class="bordder-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
                 />
                 @error('password')
                 <span class="text-base text-red-500 mt-1">{{ $message }}</span>
                 @enderror
               </div>
-              
+
               <div class="mb-10">
                 <input
                   type="submit"
