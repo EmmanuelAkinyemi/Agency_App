@@ -5,7 +5,7 @@ use App\Http\Controllers\PageController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 
-/*
+/* 
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
