@@ -66,8 +66,8 @@
               </div>
               <div class="col-7 col-md-8">
                 <div class="numbers">
-                  <p class="card-category">Investments</p>
-                  <p class="card-title">23<p>
+                  <p class="card-category">Withrawals</p>
+                  <p class="card-title">$ 345<p>
                 </div>
               </div>
             </div>
@@ -92,7 +92,7 @@
               </div>
               <div class="col-7 col-md-8">
                 <div class="numbers">
-                  <p class="card-category">Followers</p>
+                  <p class="card-category">Investments</p>
                   <p class="card-title">+45K<p>
                 </div>
               </div>

@@ -50,6 +50,8 @@ Route::get('/privacy', [PageController::class, 'privacy']);
 **/
 Route::group(['middleware' => ['guest']], function () {
 
+    Route::get('/admin/login', [PageController::class, 'adminLogin']);
+
     Route::get('/signup', [UserController::class, 'create']);
 
     Route::post('/users', [UserController::class, 'store']);
@@ -59,14 +61,11 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/authenticate', [UserController::class, 'authenticate'])->name('login');
 
     Route::post('/logout', [UserController::class, 'logout']);
-
 });
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/dashboard', [PageController::class, 'admin']);
+    Route::get('/admin/users', [PageController::class, 'adminUsers']);
+
     Route::get('/dashboard', [PageController::class, 'dashboard']);
 });
-
-Route::get('/admin/login', [PageController::class, 'adminLogin']);
-
-
