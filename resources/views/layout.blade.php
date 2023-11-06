@@ -205,7 +205,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="/privacy"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
                                     Terms & Conditions
                                 </a>
@@ -252,7 +252,7 @@
                                 </svg>
                             </a>
                         </div>
-                        <p class="text-base text-body-color">&copy; 2023 MassProfit</p>
+                        <p class="text-base text-body-color">&copy; 2010 MassProfit</p>
                     </div>
                 </div>
             </div>
