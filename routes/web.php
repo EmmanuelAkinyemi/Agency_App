@@ -5,7 +5,7 @@ use App\Http\Controllers\PageController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 
-/* 
+/*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -56,16 +56,17 @@ Route::group(['middleware' => ['guest']], function () {
 
     Route::get('/login', [UserController::class, 'login'])->name('login');
 
-    Route::post('/authenticate', [UserController::class, 'authenticate']);
+    Route::post('/authenticate', [UserController::class, 'authenticate'])->name('login');
 
     Route::post('/logout', [UserController::class, 'logout']);
 
 });
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/admin/dashboard', [PageController::class, 'admin']);
     Route::get('/dashboard', [PageController::class, 'dashboard']);
-    Route::get('/admin', [PageController::class, 'admin']);
 });
 
+Route::get('/admin/login', [PageController::class, 'adminLogin']);
 
 
