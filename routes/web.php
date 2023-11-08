@@ -59,14 +59,17 @@ Route::group(['middleware' => ['guest']], function () {
 
     Route::post('/authenticate', [UserController::class, 'authenticate'])->name('login');
 
-    Route::post('/logout', [UserController::class, 'logout']);
-
     Route::get('/admin/login', [AdminController::class, 'login']);
 
+    Route::get('/admin/register', [AdminController::class, 'register']);
+
+    Route::post('/admin/users', [AdminController::class, 'store']);
+
+    Route::post('/logout', [UserController::class, 'logout']);
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    
+
     Route::get('/dashboard', [PageController::class, 'dashboard']);
 
     Route::get('/admin/dashboard', [AdminController::class, 'admin']);
