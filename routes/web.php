@@ -61,6 +61,8 @@ Route::group(['middleware' => ['guest']], function () {
 
     Route::get('/admin/login', [AdminController::class, 'login']);
 
+    Route::post('/admin/authenticate', [AdminController::class, 'authenticate']);
+
     Route::get('/admin/register', [AdminController::class, 'register']);
 
     Route::post('/admin/users', [AdminController::class, 'store']);

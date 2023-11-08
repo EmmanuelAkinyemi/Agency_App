@@ -31,14 +31,21 @@
                             <span class="text-base mt-1 text-red-500">{{ $message }}</span>
                         @enderror
                         <label for="user" class="mb-2 text-sm text-start text-grey-900">Email*</label>
-                        <input value="{{ old('email') }}" name="email" id="email" type="email"
+                        <input
+                            value="{{ old('email') }}"
+                            name="email" id="email"
+                            type="email"
                             placeholder="mail@loopple.com"
                             class="flex items-center w-full px-5 py-4 mr-2 text-sm font-medium outline-none focus:bg-grey-400 mb-7 placeholder:text-grey-700 bg-grey-200 text-dark-grey-900 rounded-2xl" />
                         @error('email')
                             <span class="text-base mt-1 text-red-500">{{ $message }}</span>
                         @enderror
                         <label for="password" class="mb-2 text-sm text-start text-grey-900">Password*</label>
-                        <input value="{{ old('password') }}" name="password" id="password" type="password"
+                        <input
+                            value="{{ old('password') }}"
+                            name="password"
+                            id="password"
+                            type="password"
                             placeholder="Enter a password"
                             class="flex items-center w-full px-5 py-4 mb-5 mr-2 text-sm font-medium outline-none focus:bg-grey-400 placeholder:text-grey-700 bg-grey-200 text-dark-grey-900 rounded-2xl" />
                         @error('password')

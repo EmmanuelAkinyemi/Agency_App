@@ -43,17 +43,18 @@ class AdminController extends Controller
 
     public function authenticate(Request $request)
     {
-        $credentials = [
-            'username' => $request->username,
-            'password' => $request->password
-        ];
+        $formsFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
 
-        if(Auth::attempt($credentials))
-        {
-            return redirect('/admin/dashboard')->with('message', 'succesfully logged in');
+        if (auth()->attempt($formsFields)) {
+            $request->session()->regenerate();
+
+            return redirect('/admin/dashboard')->with('message', 'You are now logged in');
         }
 
-        return back()->with('error', 'Invalid Credentials');
+        return back()->with(['error', 'Invalid Credentials']);
     }
 
     public function admin()
