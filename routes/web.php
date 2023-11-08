@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use Illuminate\Auth\Events\Logout;
@@ -50,8 +51,6 @@ Route::get('/privacy', [PageController::class, 'privacy']);
 **/
 Route::group(['middleware' => ['guest']], function () {
 
-    Route::get('/admin/login', [PageController::class, 'adminLogin']);
-
     Route::get('/signup', [UserController::class, 'create']);
 
     Route::post('/users', [UserController::class, 'store']);
@@ -61,13 +60,19 @@ Route::group(['middleware' => ['guest']], function () {
     Route::post('/authenticate', [UserController::class, 'authenticate'])->name('login');
 
     Route::post('/logout', [UserController::class, 'logout']);
+
+    Route::get('/admin/login', [AdminController::class, 'login']);
+
 });
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/admin/dashboard', [PageController::class, 'admin']);
-    Route::get('/admin/users', [PageController::class, 'adminUsers']);
-    Route::get('/admin/profile', [PageController::class, 'adminProfile']);
-
-
+    
     Route::get('/dashboard', [PageController::class, 'dashboard']);
+
+    Route::get('/admin/dashboard', [AdminController::class, 'admin']);
+
+    Route::get('/admin/users', [AdminController::class, 'adminUsers']);
+
+    Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
+
 });
