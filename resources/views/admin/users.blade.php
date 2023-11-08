@@ -17,13 +17,13 @@
                                         Name
                                     </th>
                                     <th>
-                                        Country
+                                        email
                                     </th>
                                     <th>
-                                        City
+                                        Plan
                                     </th>
                                     <th class="text-right">
-                                        Salary
+                                        Investment
                                     </th>
                                 </thead>
                                 <tbody>

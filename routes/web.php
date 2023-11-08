@@ -66,6 +66,8 @@ Route::group(['middleware' => ['guest']], function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/dashboard', [PageController::class, 'admin']);
     Route::get('/admin/users', [PageController::class, 'adminUsers']);
+    Route::get('/admin/profile', [PageController::class, 'adminProfile']);
+
 
     Route::get('/dashboard', [PageController::class, 'dashboard']);
 });
