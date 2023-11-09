@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Investment;
+use Illuminate\Validation\Rule;
 use Illuminate\Http\Request;
 
 class InvestmentController extends Controller
@@ -10,5 +12,18 @@ class InvestmentController extends Controller
     public function create()
     {
         return view("admin.create-invest");
+    }
+
+    public function store(Request $request)
+    {
+        $formsFields = $request->validate([
+            'user-email' => 'required',
+            'plan_type' => 'required',
+            'deposit_amount' => 'required|min:3'
+        ]);
+
+        $investment = Investment::create($formsFields);
+
+        return redirect("/admin/investments")->with('message', 'Registration Successful');
     }
 }
