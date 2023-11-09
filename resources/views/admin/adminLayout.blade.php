@@ -61,6 +61,12 @@ Coded by www.creative-tim.com
                             <p>Users</p>
                         </a>
                     </li>
+                    <li class="{{ request()->is('admin/investments') ? 'active' : '' }}">
+                        <a href="/admin/investments">
+                            <i class="nc-icon nc-tile-56"></i>
+                            <p>Investments</p>
+                        </a>
+                    </li>
                     <li class="{{ request()->is('admin/profile') ? 'active' : '' }}">
                         <a href="/admin/profile">
                             <i class="nc-icon nc-single-02"></i>
@@ -121,18 +127,12 @@ Coded by www.creative-tim.com
                                     </p>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
+                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <form method="post" action="/admin/logout">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item" href="#">Log Out</a>
+                                    </form>
                                 </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link btn-rotate" href="javascript:;">
-                                    <i class="nc-icon nc-settings-gear-65"></i>
-                                    <p>
-                                        <span class="d-lg-none d-md-block">Account</span>
-                                    </p>
-                                </a>
                             </li>
                         </ul>
                     </div>
@@ -155,7 +155,7 @@ Coded by www.creative-tim.com
                     </div>
                 </div>
             </footer>
-            <x-flash-message/>
+            <x-alert/>
         </div>
     </div>
     <!--   Core JS Files   -->

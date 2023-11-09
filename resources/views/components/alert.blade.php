@@ -1,3 +1,7 @@
-<div>
-    <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
-</div>
+@if (session()->has('message'))
+    <div>
+        <div x-data="{ show: true }" x-init="setTimeout(() => show = false, 3000)" x-show="show" class="alert alert-primary" role="alert">
+            {{ session('message') }}
+        </div>
+    </div>
+@endif

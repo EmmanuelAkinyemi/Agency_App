@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -64,6 +65,18 @@ class AdminController extends Controller
 
     public function adminUsers()
     {
-        return view('admin.users');
+        return view('admin.users',[
+            'users' => User::all()
+        ]);
+    }
+
+    public function adminInvestments()
+    {
+        return view('admin.investments');
+    }
+
+    public function adminProfile()
+    {
+        return view('admin.profile');
     }
 }
