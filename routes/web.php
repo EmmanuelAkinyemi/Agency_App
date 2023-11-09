@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PageController;
 use Illuminate\Auth\Events\Logout;
@@ -82,6 +83,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/admin/users', [AdminController::class, 'adminUsers']);
 
     Route::get('/admin/investments', [AdminController::class, 'adminInvestments']);
+
+    Route::get('/admin/create-invest', [InvestmentController::class, 'create']);
 
 
     Route::get('/admin/profile', [AdminController::class, 'adminProfile']);

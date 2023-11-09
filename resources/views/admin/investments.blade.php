@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <button class="btn btn-info">Add New</button>
+            <a href="/admin/create-invest"  class="btn btn-info">Add New</a>
         </div>
         <div class="col-md-12">
             <div class="card">

@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('investments', function (Blueprint $table) {
             $table->id();
+            $table->string("user_email");
+            $table->string("plan_type");
+            $table->string("deposit_amount");
+            $table->string("status");
             $table->timestamps();
         });
     }
