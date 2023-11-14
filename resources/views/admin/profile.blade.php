@@ -33,7 +33,7 @@
                 <div class="col-md-5 pr-1">
                   <div class="form-group">
                     <label>email (disabled)</label>
-                    <input type="email" class="form-control" disabled="" placeholder="email" value="{{ auth()->user()->email }}">
+                    <input type="email" class="form-control" disabled="" placeholder="email" value="{{ auth()->admin()->email }}">
                   </div>
                 </div>
                 <div class="col-md-5 px-1">
