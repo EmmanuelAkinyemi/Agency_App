@@ -1,382 +1,529 @@
 @extends('user.userLayout')
 
 @section('content')
-    <div class="flex flex-col items-center justify-center min-h-screen bg-gray-900">
-        <!-- dark theme -->
-        <div class="container  m-4">
-            <div class="max-w-3xl w-full mx-auto grid gap-4 grid-cols-1">
-                {{-- alert can go in here later on today --}}
-
-                <!-- profile card -->
-                <div class="flex flex-col sticky top-0 z-10">
-                    <div class="bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl p-4">
-                        <div class="flex-none sm:flex">
-                            <div class=" relative h-32 w-32   sm:mb-0 mb-3">
-                                <img src="https://media.istockphoto.com/id/1398923416/photo/close-up-portrait-of-smiling-businesswoman-ellen-with-arms-crossed-3d-rendering-on-white.webp?b=1&s=170667a&w=0&k=20&c=HLr4nKEpCfetBF3hczAxqBFQhdMqSo5YKNttjIRHIx8="
-                                    alt="icon" class=" w-32 h-32 object-cover rounded-2xl">
-
-                            </div>
-                            <div class="flex-auto sm:ml-5 justify-evenly">
-                                <div class="flex items-center justify-between sm:mt-2">
-                                    <div class="flex items-center">
-                                        <div class="flex flex-col">
-                                            <div class="w-full flex-none text-lg text-gray-200 font-bold leading-none">{{ auth()->user()->name }}
-                                            </div>
-                                            <div class="flex-auto text-gray-400 my-1">
-                                                <span class="mr-3 ">{{ auth()->user()->email }}</span>
+    <div class="container-fluid">
+        <div class="form-head d-md-flex mb-sm-4 mb-3 align-items-start">
+            <div class="me-auto  d-lg-block">
+                <h2 class="text-black font-w600">Dashboard</h2>
+                <p class="mb-0">Welcome <span class="mr-3 ">{{ auth()->user()->email }}</span></p>
+            </div>
+            <a href="index.html" class="btn btn-primary rounded light me-3">Refresh</a>
+            <a href="javascript:void(0);" class="btn btn-primary rounded"><i class="fas fa-cog me-0"></i></a>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 col-xxl-12">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card bg-danger property-bx text-white">
+                            <div class="card-body">
+                                <div class="media d-sm-flex d-block align-items-center">
+                                    <span class="me-4 d-block mb-sm-0 mb-3">
+                                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                            xmlns="../../www.w3.org/2000/svg.html">
+                                            <path
+                                                d="M31.8333 79.1667H4.16659C2.33325 79.1667 0.833252 77.6667 0.833252 75.8333V29.8333C0.833252 29 1.16659 28 1.83325 27.5L29.4999 1.66667C30.4999 0.833332 31.8333 0.499999 32.9999 0.999999C34.3333 1.66667 34.9999 2.83333 34.9999 4.16667V76C34.9999 77.6667 33.4999 79.1667 31.8333 79.1667ZM7.33325 72.6667H28.4999V11.6667L7.33325 31.3333V72.6667Z"
+                                                fill="white" />
+                                            <path
+                                                d="M75.8333 79.1667H31.6666C29.8333 79.1667 28.3333 77.6667 28.3333 75.8334V36.6667C28.3333 34.8334 29.8333 33.3334 31.6666 33.3334H75.8333C77.6666 33.3334 79.1666 34.8334 79.1666 36.6667V76C79.1666 77.6667 77.6666 79.1667 75.8333 79.1667ZM34.9999 72.6667H72.6666V39.8334H34.9999V72.6667Z"
+                                                fill="white" />
+                                            <path
+                                                d="M60.1665 79.1667H47.3332C45.4999 79.1667 43.9999 77.6667 43.9999 75.8334V55.5C43.9999 53.6667 45.4999 52.1667 47.3332 52.1667H60.1665C61.9999 52.1667 63.4999 53.6667 63.4999 55.5V75.8334C63.4999 77.6667 61.9999 79.1667 60.1665 79.1667ZM50.6665 72.6667H56.9999V58.8334H50.6665V72.6667Z"
+                                                fill="white" />
+                                        </svg>
+                                    </span>
+                                    <div class="media-body mb-sm-0 mb-3 me-5">
+                                        <h4 class="fs-22 text-white">Total Properties</h4>
+                                        <div class="progress mt-3 mb-2" style="height:8px;">
+                                            <div class="progress-bar bg-white progress-animated"
+                                                style="width: 86%; height:8px;" role="progressbar">
+                                                <span class="sr-only">86% Complete</span>
                                             </div>
                                         </div>
+                                        <span class="fs-14">431 more to break last month record</span>
                                     </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!---stats-->
-                <div class="grid grid-cols-12 gap-4 ">
-                    <div class="col-span-12 sm:col-span-4">
-                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-14 w-14  absolute bottom-4 right-3 text-green-400" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
-                                <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
-                            </svg>
-                            <div class="flex justify-between items-center ">
-                                <img class="w-7 filter grayscale"
-                                    src="https://v1.tailwindcss.com/_next/static/media/tailwindcss-mark.6ea76c3b72656960a6ae5ad8b85928d0.svg"
-                                    alt="taiwind css">
-                            </div>
-                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">20</div>
-                            <div class="text-sm text-gray-500">Components</div>
-                        </div>
-                    </div>
-                    <div class="col-span-12 sm:col-span-4">
-                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-14 w-14  absolute bottom-4 right-3 text-blue-500" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path
-                                    d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
-                            </svg>
-                            <div class="flex justify-between items-center ">
-                                <i class="fab fa-behance text-xl text-gray-400"></i>
-                            </div>
-                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">99</div>
-                            <div class="text-sm text-gray-500">Projects</div>
-                        </div>
-                    </div>
-                    <div class="col-span-12 sm:col-span-4">
-                        <div class="p-4 relative  bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                            <svg xmlns="http://www.w3.org/2000/svg"
-                                class="h-14 w-14  absolute bottom-4 right-3 text-yellow-300" viewBox="0 0 20 20"
-                                fill="currentColor">
-                                <path fill-rule="evenodd"
-                                    d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z"
-                                    clip-rule="evenodd" />
-                            </svg>
-                            <div class="flex justify-between items-center ">
-                                <i class="fab fa-codepen text-xl text-gray-400"></i>
-                            </div>
-                            <div class="text-2xl text-gray-100 font-medium leading-8 mt-5">50</div>
-                            <div class="text-sm text-gray-500">Pen Items</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
-
-                    <!--confirm modal-->
-                    <div
-                        class="flex flex-col p-4 relative items-center justify-center bg-gray-800 border border-gray-800 shadow-lg  rounded-2xl">
-                        <div class="">
-                            <div class="text-center p-5 flex-auto justify-center">
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="w-4 h-4 -m-1 flex items-center text-blue-400 mx-auto" fill="none"
-                                    viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg"
-                                    class="w-16 h-16 flex items-center text-gray-600 mx-auto" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                        clip-rule="evenodd" />
-                                </svg>
-                                <h2 class="text-xl font-bold py-4 text-gray-200">Are you sure?</h3>
-                                    <p class="text-sm text-gray-500 px-8">Do you really want to delete your account?
-                                        This process cannot be undone</p>
-                            </div>
-                            <div class="p-3  mt-2 text-center space-x-4 md:block">
-                                <button
-                                    class="mb-2 md:mb-0 bg-gray-700 px-5 py-2 text-sm shadow-sm font-medium tracking-wider border-2 border-gray-600 hover:border-gray-700 text-gray-300 rounded-full hover:shadow-lg hover:bg-gray-800 transition ease-in duration-300">
-                                    Cancel
-                                </button>
-                                <button
-                                    class="bg-green-400 hover:bg-green-500 px-5 ml-4 py-2 text-sm shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300">Confirm</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--elements-->
-                    <div class="flex flex-col space-y-4">
-                        <!-- elements 1 -->
-                        <div
-                            class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center mr-auto">
-
-                                    <div class="inline-flex w-12 h-12"><img
-                                            src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                                            alt="aji" class=" relative w-12 h-12 object-cover rounded-2xl"><span
-                                            class="animate-ping absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
-                                        <span></span>
-                                    </div>
-
-                                    <div class="flex flex-col ml-3">
-                                        <div class="font-medium leading-none text-gray-100">Aji</div>
-                                        <p class="text-sm text-gray-500 leading-none mt-1">UI/UX Designer</p>
-                                    </div>
-                                </div>
-                                <a href="#"
-                                    class="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300 mr-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M4 5a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V7a2 2 0 00-2-2h-1.586a1 1 0 01-.707-.293l-1.121-1.121A2 2 0 0011.172 3H8.828a2 2 0 00-1.414.586L6.293 4.707A1 1 0 015.586 5H4zm6 9a3 3 0 100-6 3 3 0 000 6z"
-                                            clip-rule="evenodd"></path>
-                                    </svg></a>
-                                <a hrf="#"
-                                    class="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300 ml-2"><svg
-                                        xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                        fill="currentColor">
-                                        <path fill-rule="evenodd"
-                                            d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z"
-                                            clip-rule="evenodd"></path>
-                                    </svg></a>
-                            </div>
-                        </div>
-                        <!--elements 2-->
-                        <div
-                            class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center mr-auto">
-
-                                    <div class="inline-flex w-12 h-12"><img
-                                            src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                                            alt="aji" class=" relative p-1 w-12 h-12 object-cover rounded-2xl"><span
-                                            class="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-green-400 opacity-75"></span>
-                                        <span></span>
-                                    </div>
-
-                                    <div class="flex flex-col ml-3 min-w-0">
-                                        <div class="font-medium leading-none text-gray-100">Groupname</div>
-                                        <p class="text-sm text-gray-500 leading-none mt-1 truncate">Beautiful hand-crafted
-                                            SVG icons</p>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col ml-3 min-w-0">
-                                    <span class="text-xs text-gray-500 text-right mb-1">9:02pm</span>
-                                    <div class="flex">
-                                        <a
-                                            class="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300 mr-2"><svg
-                                                xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                                fill="currentColor">
-                                                <path fill-rule="evenodd"
-                                                    d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM12.293 7.293a1 1 0 011.414 0L15 8.586l1.293-1.293a1 1 0 111.414 1.414L16.414 10l1.293 1.293a1 1 0 01-1.414 1.414L15 11.414l-1.293 1.293a1 1 0 01-1.414-1.414L13.586 10l-1.293-1.293a1 1 0 010-1.414z"
-                                                    clip-rule="evenodd" />
-                                            </svg></a>
-                                        <span
-                                            class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-green-100 bg-green-400 rounded-full ml-2">99</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--elements 2-->
-                        <div
-                            class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl cursor-pointer transition ease-in duration-500  transform hover:scale-105">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center mr-auto">
-                                    <div class="inline-flex w-12 h-12"><img
-                                            src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                                            alt="aji" class=" relative p-1 w-12 h-12 object-cover rounded-2xl"><span
-                                            class="absolute w-12 h-12 inline-flex border-2 rounded-2xl border-gray-600 opacity-75"></span>
-                                        <span></span>
-                                    </div>
-
-                                    <div class="flex flex-col ml-3 min-w-0">
-                                        <div class="font-medium leading-none text-gray-100">Ajimon</div>
-                                        <p class="text-sm text-gray-500 leading-none mt-1 truncate">Jul 066, 2021, 8.25 PM
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col ml-3 min-w-0">
-                                    <div class="flex">
-                                        <h5 class="flex items-center font-medium text-gray-300 mr-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                            </svg> 1800
-                                        </h5>
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-400 ml-2"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd"
-                                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                                clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div
-                            class="flex flex-col p-4 bg-gray-800 border border-gray-800 shadow-md hover:text-green-500 text-gray-400 hover:shodow-lg rounded-2xl transition ease-in duration-500  transform hover:scale-105 cursor-pointer">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center mr-auto">
-                                    <div class="-space-x-5 flex ">
-                                        <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                                            alt="aji"
-                                            class=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-gray-800">
-                                        <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg"
-                                            alt="aji"
-                                            class=" relative p-1 w-12 h-12 object-cover rounded-2xl border-2 border-gray-600 bg-gray-800 shadow">
-                                    </div>
-
-                                    <div class="flex flex-col ml-3 min-w-0">
-                                        <div class="font-medium leading-none text-gray-100">Pending Request </div>
-                                        <p class="text-sm text-gray-500 leading-none mt-1 truncate">Jul 066, 2021, 8.25 PM
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col ml-3 min-w-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M9 5l7 7-7 7"></path>
-                                    </svg>
+                                    <span class="fs-46 font-w500">4,562</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        class="flex flex-col justify-center p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <div class="flex flex-col">
-                                    <div class="font-medium leading-none text-gray-100">Delete Your Acccount?</div>
-                                    <p class="text-sm text-gray-500 leading-none mt-1">By deleting your account.</p>
-                                </div>
-                            </div>
-                            <a
-                                class="flex-no-shrink text-xs  font-medium tracking-wider  text-gray-400 hover:text-green-400 transition ease-in duration-300"><svg
-                                    xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                                    fill="currentColor">
-                                    <path fill-rule="evenodd"
-                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                                        clip-rule="evenodd" />
-                                </svg></a>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
-                        <div class="flex">
-                            <img src="https://images.unsplash.com/photo-1575390730294-dfc5efa5250b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
-                                alt="Just a flower" class=" w-16  object-fit  h-16 rounded-2xl">
-                            <div class="flex flex-col justify-center w-full px-2 py-1">
-                                <div class="flex justify-between items-center ">
-                                    <div class="flex flex-col">
-                                        <h2 class="font-medium leading-none text-gray-100">Massive Dynamic</h2>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center">
+                                    <div class="media-body me-3">
+                                        <h2 class="fs-36 text-black font-w600">2,356</h2>
+                                        <p class="fs-18 mb-0 text-black font-w500">Properties for Sale</p>
+                                        <span class="fs-13">Target 3k/month</span>
                                     </div>
-                                    <svg xmlns="http://www.w3.org/2000/svg"
-                                        class="h-5 w-5 text-gray-400 hover:text-green-400 cursor-pointer" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-                                    </svg>
-                                </div>
-                                <div class="flex pt-2  text-sm text-gray-500">
-                                    <div class="flex items-center mr-auto">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-400 mr-1"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                            </path>
-                                        </svg>
-                                        <p class="font-normal">4.5</p>
-                                    </div>
-                                    <div class="flex items-center font-medium text-gray-300 ">
-                                        $1800
-                                        <span class="text-gray-600 text-sm font-normal"> /wk</span>
+                                    <div class="d-inline-block position-relative donut-chart-sale">
+                                        <span class="donut1"
+                                            data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'>5/8</span>
+                                        <small class="text-primary">71%</small>
+                                        <span class="circle bgl-primary"></span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="flex flex-col">
-                    <div class="lg:w-3/5 p-4 bg-gray-800 border-gray-800 shadow-md hover:shodow-lg rounded-2xl">
-                        <div class="flex-none lg:flex">
-                            <div class=" h-full w-full lg:h-36 lg:w-36   lg:mb-0 mb-3">
-                                <img src="https://images.unsplash.com/photo-1515362778563-6a8d0e44bc0b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80"
-                                    alt="unsplash images"
-                                    class=" w-full  object-scale-down lg:object-cover  lg:h-36 rounded-2xl">
-                            </div>
-                            <div class="flex-auto lg:ml-3 justify-evenly py-2">
-                                <div class="flex flex-col ">
-                                    <div class="flex items-center mr-auto text-sm">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-yellow-300 mr-1"
-                                            viewBox="0 0 20 20" fill="currentColor">
-                                            <path
-                                                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
-                                            </path>
-                                        </svg>
-                                        <p class="font-normal text-gray-500">4.5</p>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center">
+                                    <div class="media-body me-3">
+                                        <h2 class="fs-36 text-black font-w600">2,206</h2>
+                                        <p class="fs-18 mb-0 text-black font-w500">Properties for Rent</p>
+                                        <span class="fs-13">Target 3k/month</span>
                                     </div>
-                                    <div class="flex items-center  justify-between min-w-0">
-                                        <h2 class="mr-auto   text-base text-gray-100 font-medium truncate">Massive Dynamic
-                                        </h2>
-                                        <div class="flex items-center font-medium text-gray-300 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-                                                viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z">
-                                                </path>
-                                            </svg>
-                                            800
-                                            <span class="text-gray-500 text-sm font-normal"> /Day</span>
-                                        </div>
+                                    <div class="d-inline-block position-relative donut-chart-sale">
+                                        <span class="donut1"
+                                            data-peity='{ "fill": ["rgb(55, 209, 90)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'>7/8</span>
+                                        <small class="text-success">90%</small>
+                                        <span class="circle bgl-success"></span>
                                     </div>
-                                    <p class="flex items-center text-sm text-gray-400">Fortcochi,Cochin . 7km <span
-                                            class="relative inline-flex rounded-md shadow-sm ml-2">
-                                            <span class="flex absolute h-2 w-2 top-0 right-0 -mt-1 -mr-1">
-                                                <span
-                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                                <span
-                                                    class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                                            </span>
-                                        </span>
-
-                                    </p>
-                                </div>
-                                <div class="flex my-3 border-t border-gray-800 "></div>
-                                <div class="flex space-x-3 text-sm font-medium">
-                                    <div class="flex-auto items-center flex space-x-3 text-xs text-gray-500">
-                                        <span>2 Bedroom</span><span>4 Guest</span>
-
-                                    </div>
-                                    <button
-                                        class="mb-2 md:mb-0 flex-no-shrink bg-green-400 hover:bg-green-500 px-5 py-2 text-xs shadow-sm hover:shadow-lg font-medium tracking-wider border-2 border-green-300 hover:border-green-500 text-white rounded-full transition ease-in duration-300"
-                                        type="button" aria-label="like">Book Now</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-2/5 ..."></div>
                 </div>
             </div>
-
+            <div class="col-xl-6 col-xxl-12">
+                <div class="card">
+                    <div class="card-header border-0 pb-0">
+                        <h3 class="fs-20 text-black">Total Revenue</h3>
+                        <div class="dropdown ms-auto">
+                            <div class="btn-link" data-bs-toggle="dropdown">
+                                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <rect x="0" y="0" width="24" height="24"></rect>
+                                        <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                        <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                        <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-2 pb-0">
+                        <div class="d-flex flex-wrap align-items-center">
+                            <span class="fs-36 text-black font-w600 me-3">$678,345</span>
+                            <p class="me-sm-auto me-3 mb-sm-0 mb-3">last month $563,443</p>
+                            <div class="d-flex align-items-center">
+                                <svg class="me-3" width="87" height="47" viewBox="0 0 87 47" fill="none"
+                                    xmlns="../../www.w3.org/2000/svg.html">
+                                    <path
+                                        d="M29.8043 20.9254C15.2735 14.3873 5.88029 27.282 3 34.5466V46.2406H85V4.58005C70.8925 -0.868404 70.5398 8.66639 60.8409 19.5633C51.1419 30.4602 47.9677 29.0981 29.8043 20.9254Z"
+                                        fill="url(#paint0_linear)" />
+                                    <path
+                                        d="M3 35.2468C5.88029 27.9822 15.2735 15.0875 29.8043 21.6257C47.9677 29.7984 51.1419 31.1605 60.8409 20.2636C70.5398 9.36665 70.8925 -0.168147 85 5.28031"
+                                        stroke="#37D159" stroke-width="6" />
+                                    <defs>
+                                        <linearGradient id="paint0_linear" x1="44" y1="-36.4332" x2="44"
+                                            y2="45.9686" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#37D159" offset="0" />
+                                            <stop offset="1" stop-color="#37D159" stop-opacity="0" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <span class="fs-22 text-success me-2">7%</span>
+                                <svg width="12" height="6" viewBox="0 0 12 6" fill="none"
+                                    xmlns="../../www.w3.org/2000/svg.html">
+                                    <path d="M0 6L6 2.62268e-07L12 6" fill="#37D159" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div id="chartTimeline"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-xxl-8">
+                <div class="row">
+                    <div class="col-xl-8 col-xxl-12">
+                        <div class="card">
+                            <div class="card-header border-0 pb-0">
+                                <h3 class="fs-20 text-black">Overview</h3>
+                                <div class="dropdown ms-auto">
+                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-sm-flex flex-wrap  justify-content-around">
+                                    <div class="d-flex mb-4 align-items-center">
+                                        <span class="rounded me-3 bg-primary p-3">
+                                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                                xmlns="../../www.w3.org/2000/svg.html">
+                                                <path
+                                                    d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                        <div>
+                                            <p class="fs-14 mb-1">Total Sale</p>
+                                            <span class="fs-18 text-black font-w700">2,346 Unit</span>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex mb-4 align-items-center">
+                                        <span class="rounded me-3 bg-success p-3">
+                                            <svg width="26" height="26" viewBox="0 0 26 26" fill="none"
+                                                xmlns="../../www.w3.org/2000/svg.html">
+                                                <path
+                                                    d="M10.3458 25.7292H1.35412C0.758283 25.7292 0.270782 25.2417 0.270782 24.6458V9.69583C0.270782 9.42499 0.379116 9.09999 0.595783 8.93749L9.58745 0.541659C9.91245 0.270825 10.3458 0.162492 10.725 0.324992C11.1583 0.541659 11.375 0.920825 11.375 1.35416V24.7C11.375 25.2417 10.8875 25.7292 10.3458 25.7292ZM2.38328 23.6167H9.26245V3.79166L2.38328 10.1833V23.6167Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M24.6458 25.7292H10.2916C9.69578 25.7292 9.20828 25.2417 9.20828 24.6458V11.9167C9.20828 11.3208 9.69578 10.8333 10.2916 10.8333H24.6458C25.2416 10.8333 25.7291 11.3208 25.7291 11.9167V24.7C25.7291 25.2417 25.2416 25.7292 24.6458 25.7292ZM11.375 23.6167H23.6166V12.9458H11.375V23.6167Z"
+                                                    fill="white" />
+                                                <path
+                                                    d="M19.5541 25.7292H15.3833C14.7874 25.7292 14.2999 25.2417 14.2999 24.6458V18.0375C14.2999 17.4417 14.7874 16.9542 15.3833 16.9542H19.5541C20.1499 16.9542 20.6374 17.4417 20.6374 18.0375V24.6458C20.6374 25.2417 20.1499 25.7292 19.5541 25.7292ZM16.4666 23.6167H18.5249V19.1208H16.4666V23.6167Z"
+                                                    fill="white" />
+                                            </svg>
+                                        </span>
+                                        <div>
+                                            <p class="fs-14 mb-1">Total Rent</p>
+                                            <span class="fs-18 text-black font-w700">1,252 Unit</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="chartBar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-xxl-12">
+                        <div class="row">
+                            <div class="col-xl-12 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div id="monocromeChart"></div>
+                                        <div class="d-flex flex-wrap mt-3">
+                                            <span class="text-black font-w600 me-5 mb-2">
+                                                <svg class="me-2" width="20" height="20" viewBox="0 0 20 20"
+                                                    fill="none" xmlns="../../www.w3.org/2000/svg.html">
+                                                    <rect width="20" height="20" rx="8" fill="#FFB067" />
+                                                </svg>Agent</span>
+                                            <span class="text-black font-w600 mb-2">
+                                                <svg class="me-2" width="20" height="20" viewBox="0 0 20 20"
+                                                    fill="none" xmlns="../../www.w3.org/2000/svg.html">
+                                                    <rect width="20" height="20" rx="8" fill="#B655E4" />
+                                                </svg>Customers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-xxl-6 col-md-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <p class="mb-2 d-flex  fs-16 text-black font-w500">Product Viewed
+                                            <span class="pull-right ms-auto text-dark fs-14">561/days</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:75%; height:10px;" role="progressbar">
+                                                <span class="sr-only">75% Complete</span>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2 d-flex  fs-16 text-black font-w500">Product Listed
+                                            <span class="pull-right ms-auto text-dark fs-14">3,456 Unit</span>
+                                        </p>
+                                        <div class="progress mb-3" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:90%; height:10px;" role="progressbar">
+                                                <span class="sr-only">90% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div class="card">
+                            <div class="card-header border-0 pb-0">
+                                <h3 class="fs-20 text-black">Properties Map Location</h3>
+                                <div class="dropdown ms-auto">
+                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <p class="mb-2 d-flex align-items-center  fs-16 text-black font-w500">Europe
+                                            <span class="pull-right text-dark fs-14 ms-2">653 Unit</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:75%; height:10px;" role="progressbar">
+                                                <span class="sr-only">75% Complete</span>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2 d-flex align-items-center  fs-16 text-black font-w500">Asia
+                                            <span class="pull-right text-dark fs-14 ms-2">653 Unit</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:100%; height:10px;" role="progressbar">
+                                                <span class="sr-only">100% Complete</span>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2 d-flex align-items-center  fs-16 text-black font-w500">Africa
+                                            <span class="pull-right text-dark fs-14 ms-2">653 Unit</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:75%; height:10px;" role="progressbar">
+                                                <span class="sr-only">75% Complete</span>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2 d-flex align-items-center  fs-16 text-black font-w500">Australia
+                                            <span class="pull-right text-dark fs-14 ms-2">653 Unit</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:50%; height:10px;" role="progressbar">
+                                                <span class="sr-only">50% Complete</span>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2 d-flex align-items-center  fs-16 text-black font-w500">America
+                                            <span class="pull-right text-dark fs-14 ms-2">653 Unit</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:70%; height:10px;" role="progressbar">
+                                                <span class="sr-only">70% Complete</span>
+                                            </div>
+                                        </div>
+                                        <p class="mb-2 d-flex align-items-center  fs-16 text-black font-w500">USA
+                                            <span class="pull-right text-dark fs-14 ms-2">653 Unit</span>
+                                        </p>
+                                        <div class="progress mb-4" style="height:10px">
+                                            <div class="progress-bar bg-primary progress-animated"
+                                                style="width:40%; height:10px;" role="progressbar">
+                                                <span class="sr-only">40% Complete</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div id="world-map"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-xxl-4">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-header border-0 pb-0">
+                                <h3 class="fs-20 text-black">Customer Review</h3>
+                                <div class="dropdown ms-auto">
+                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body pb-0">
+                                <div class="pb-3 border-bottom mb-3">
+                                    <div class="d-flex mb-3 flex-wrap align-items-end">
+                                        <img class="rounded me-3" src="images/customers/1.jpg" width="58"
+                                            alt="">
+                                        <div>
+                                            <h6 class="fs-16 text-black font-w600">John Doe</h6>
+                                            <div class="star-icons">
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                            </div>
+                                        </div>
+                                        <span class="fs-14 ms-auto">5m ago</span>
+                                    </div>
+                                    <p class="fs-14 mb-0">Friendly service
+                                        Josh, Lunar and everyone at Just Property in Hastings deserved a big Thank You from
+                                        us for moving us from Jakarta to Medan during the lockdown.
+                                    </p>
+                                </div>
+                                <div class="pb-3 border-bottom mb-3">
+                                    <div class="d-flex mb-3 flex-wrap align-items-end">
+                                        <img class="rounded me-3" src="images/customers/2.jpg" width="58"
+                                            alt="">
+                                        <div>
+                                            <h6 class="fs-16 text-black font-w600">Amelia Tuner</h6>
+                                            <div class="star-icons">
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                            </div>
+                                        </div>
+                                        <span class="fs-14 ms-auto">10h ago</span>
+                                    </div>
+                                    <p class="fs-14 mb-0">I viewed a number of properties with Just Property and found them
+                                        to be professional, efficient, patient, courteous and helpful every time.
+                                    </p>
+                                </div>
+                                <div class="pb-3">
+                                    <div class="d-flex mb-3 flex-wrap align-items-end">
+                                        <img class="rounded me-3" src="images/customers/3.jpg" width="58"
+                                            alt="">
+                                        <div>
+                                            <h6 class="fs-16 text-black font-w600">Jessica Humb</h6>
+                                            <div class="star-icons">
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                                <i class="las la-star"></i>
+                                            </div>
+                                        </div>
+                                        <span class="fs-14 ms-auto">2d ago</span>
+                                    </div>
+                                    <p class="fs-14 mb-0">Dealing with Syamsudin and Bakri was a joy. I got in touch with
+                                        Just Property after seeing a couple of properties that caught my eye. Both Syamsudin
+                                        and Bakri strive to deliver a professional service and surpassed my expectations -
+                                        they were not only helpful but extremely approachable and not at all bumptious...
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-footer border-0 p-0">
+                                <a href="review.html" class="btn d-block btn-primary rounded">See More Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12 col-lg-6">
+                        <div class="card">
+                            <div class="card-header border-0 pb-0">
+                                <h3 class="fs-20 text-black">Recent Property</h3>
+                                <div class="dropdown ms-auto">
+                                    <div class="btn-link" data-bs-toggle="dropdown">
+                                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
+                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                <rect x="0" y="0" width="24" height="24"></rect>
+                                                <circle fill="#000000" cx="5" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="12" cy="12" r="2"></circle>
+                                                <circle fill="#000000" cx="19" cy="12" r="2"></circle>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item" href="javascript:void(0);">Edit</a>
+                                        <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="testimonial-one owl-carousel">
+                                    <div class="items">
+                                        <a href="property-details.html"><img src="images/testimonial/1.png"
+                                                alt="#" class="w-100 mw-100 mb-3 rounded"></a>
+                                        <h5 class="fs-16 font-w600 mb-0"><a href="property-details.html"
+                                                class="text-black">98AB Alexander Court, London</a></h5>
+                                        <span class="fs-14 d-block mb-4">45 Connor St. London, 44523</span>
+                                        <a href="javascript:void(0);"
+                                            class="bgl-primary text-black p-1 ps-2 pe-2 me-3 font-w600 rounded">
+                                            <svg class="me-2" width="20" height="13" viewBox="0 0 20 13"
+                                                fill="none" xmlns="../../www.w3.org/2000/svg.html">
+                                                <path
+                                                    d="M15.8125 5.54171C17.6264 5.54171 19.1667 7.01538 19.1667 8.89588V11.7709H17.7292V12.7292H16.7708V11.7709H2.39583V12.7292H1.4375V11.7709H0V8.89588C0 7.08201 1.48814 5.54171 3.35417 5.54171H15.8125ZM14.8542 0.270874C16.1425 0.270874 17.2504 1.30663 17.25 2.66671L17.2504 4.95601C16.8146 4.71707 16.3271 4.58337 15.8125 4.58337L14.8542 4.58289C14.8542 3.76226 14.1822 3.14587 13.4167 3.14587H10.5417C10.1735 3.14587 9.8377 3.28427 9.58338 3.51186C9.32939 3.28444 8.99338 3.14587 8.625 3.14587H5.75C4.95625 3.14587 4.31276 3.78921 4.3125 4.58289L3.35417 4.58337C2.83975 4.58337 2.35239 4.71699 1.91667 4.95579V2.66671C1.91667 1.37835 2.95002 0.270874 4.3125 0.270874H14.8542ZM8.625 4.10397C8.88503 4.10397 9.10417 4.34355 9.10417 4.58337L5.27083 4.58289C5.27083 4.28973 5.50427 4.10421 5.75 4.10421L8.625 4.10397ZM13.4167 4.10743C13.6878 4.10397 13.8956 4.33738 13.8958 4.58289H10.0625C10.0625 4.28554 10.2959 4.10421 10.5417 4.10421L13.4167 4.10743Z"
+                                                    fill="#3B4CB8" />
+                                            </svg>
+                                            4</a>
+                                        <a href="javascript:void(0);"
+                                            class="bgl-primary text-black p-1 ps-3 pe-3 font-w600 rounded">
+                                            <svg class="me-2" width="13" height="15" viewBox="0 0 13 15"
+                                                fill="none" xmlns="../../www.w3.org/2000/svg.html">
+                                                <path
+                                                    d="M12.92 7.00064L12.6744 8.22859C12.2819 10.1913 10.4996 11.6677 8.55634 11.6677H7.95079L9.11756 14.7791H1.5557V7.00064H12.92ZM3.50032 0C4.54604 0 5.44495 0.871336 5.44495 1.94462V5.05602H12.8345V5.83387H5.44495V6.22279H0.777849L0.777769 7.38965C0.327309 7.05126 0 6.47802 0 5.83387V1.94462C0 0.8989 0.851593 0 1.94462 0H3.50032Z"
+                                                    fill="#3B4CB8" />
+                                            </svg>
+                                            2
+                                        </a>
+                                        <p class="fs-14 mt-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            mini</p>
+                                    </div>
+                                    <div class="items">
+                                        <a href="property-details.html"><img src="images/testimonial/1.png"
+                                                alt="#" class="w-100 mw-100 mb-3 rounded"></a>
+                                        <h5 class="fs-16 font-w600 mb-0"><a href="property-details.html"
+                                                class="text-black">98AB Alexander Court, London</a></h5>
+                                        <span class="fs-14 d-block mb-4">45 Connor St. London, 44523</span>
+                                        <a href="javascript:void(0);"
+                                            class="bgl-primary text-black p-1 ps-2 pe-2 me-3 font-w600 rounded">
+                                            <svg class="me-2" width="20" height="13" viewBox="0 0 20 13"
+                                                fill="none" xmlns="../../www.w3.org/2000/svg.html">
+                                                <path
+                                                    d="M15.8125 5.54171C17.6264 5.54171 19.1667 7.01538 19.1667 8.89588V11.7709H17.7292V12.7292H16.7708V11.7709H2.39583V12.7292H1.4375V11.7709H0V8.89588C0 7.08201 1.48814 5.54171 3.35417 5.54171H15.8125ZM14.8542 0.270874C16.1425 0.270874 17.2504 1.30663 17.25 2.66671L17.2504 4.95601C16.8146 4.71707 16.3271 4.58337 15.8125 4.58337L14.8542 4.58289C14.8542 3.76226 14.1822 3.14587 13.4167 3.14587H10.5417C10.1735 3.14587 9.8377 3.28427 9.58338 3.51186C9.32939 3.28444 8.99338 3.14587 8.625 3.14587H5.75C4.95625 3.14587 4.31276 3.78921 4.3125 4.58289L3.35417 4.58337C2.83975 4.58337 2.35239 4.71699 1.91667 4.95579V2.66671C1.91667 1.37835 2.95002 0.270874 4.3125 0.270874H14.8542ZM8.625 4.10397C8.88503 4.10397 9.10417 4.34355 9.10417 4.58337L5.27083 4.58289C5.27083 4.28973 5.50427 4.10421 5.75 4.10421L8.625 4.10397ZM13.4167 4.10743C13.6878 4.10397 13.8956 4.33738 13.8958 4.58289H10.0625C10.0625 4.28554 10.2959 4.10421 10.5417 4.10421L13.4167 4.10743Z"
+                                                    fill="#3B4CB8" />
+                                            </svg>
+                                            4</a>
+                                        <a href="javascript:void(0);"
+                                            class="bgl-primary text-black p-1 ps-3 pe-3 font-w600 rounded">
+                                            <svg class="me-2" width="13" height="15" viewBox="0 0 13 15"
+                                                fill="none" xmlns="../../www.w3.org/2000/svg.html">
+                                                <path
+                                                    d="M12.92 7.00064L12.6744 8.22859C12.2819 10.1913 10.4996 11.6677 8.55634 11.6677H7.95079L9.11756 14.7791H1.5557V7.00064H12.92ZM3.50032 0C4.54604 0 5.44495 0.871336 5.44495 1.94462V5.05602H12.8345V5.83387H5.44495V6.22279H0.777849L0.777769 7.38965C0.327309 7.05126 0 6.47802 0 5.83387V1.94462C0 0.8989 0.851593 0 1.94462 0H3.50032Z"
+                                                    fill="#3B4CB8" />
+                                            </svg>
+                                            2
+                                        </a>
+                                        <p class="fs-14 mt-3 mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            mini</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection
