@@ -22,7 +22,7 @@
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
                     <div class="w-60 max-w-full px-4">
-                        <a href="javascript:void(0)" class="block w-full py-5">
+                        <a href="/" class="block w-full py-5">
                             <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="w-full" />
                         </a>
                     </div>
@@ -101,7 +101,7 @@
             <div class="-mx-4 flex flex-wrap">
                 <div class="w-full px-4 sm:w-2/3 lg:w-4/12">
                     <div class="mb-10 w-full">
-                        <a href="javascript:void(0)" class="mb-6 inline-block max-w-[160px]">
+                        <a href="/" class="mb-6 inline-block max-w-[160px]">
                             <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="max-w-full" />
                         </a>
                         <p class="mb-7 text-base text-body-color">
@@ -189,25 +189,13 @@
                         <h4 class="mb-9 text-lg font-semibold text-dark">Quick Links</h4>
                         <ul>
                             <li>
-                                <a href="javascript:void(0)"
-                                    class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Partnership
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"
-                                    class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Privacy Policy
-                                </a>
-                            </li>
-                            <li>
                                 <a href="/privacy"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
-                                    Terms & Conditions
+                                    Terms & Privacy
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0)"
+                                <a href="#faq"
                                     class="mb-2 inline-block text-base leading-loose text-body-color hover:text-pink-600">
                                     FAQs
                                 </a>
