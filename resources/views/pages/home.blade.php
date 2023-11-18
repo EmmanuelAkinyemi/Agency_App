@@ -157,11 +157,10 @@
                   </svg>
                 </div>
                 <h4 class="mb-3 text-xl font-semibold text-dark">
-                  Based on Tailwind CSS
+                    FOREX
                 </h4>
                 <p class="text-body-color">
-                  We dejoy working with discerning clients, people for whom
-                  qualuty, service, integrity & aesthetics.
+                    Our Forex instrument contains 50+ FX currency pairs that are best performers and with favorable volatility.
                 </p>
               </div>
             </div>
@@ -198,11 +197,10 @@
                   </svg>
                 </div>
                 <h4 class="mb-3 text-xl font-semibold text-dark">
-                  100+ Components
+                    STOCKS & ETFS
                 </h4>
                 <p class="text-body-color">
-                  We dejoy working with discerning clients, people for whom
-                  qualuty, service, integrity & aesthetics.
+                    We have selected over 3,000 stocks from Blue chips or new IPOs, great US markets and local European exchanges.
                 </p>
               </div>
             </div>
@@ -239,7 +237,7 @@
                   </svg>
                 </div>
                 <h4 class="mb-3 text-xl font-semibold text-dark">
-                  Speed Optimized
+                    We have selected over 3,000 stocks from Blue chips or new IPOs, great US markets and local European exchanges.
                 </h4>
                 <p class="text-body-color">
                   We dejoy working with discerning clients, people for whom
@@ -337,7 +335,7 @@
                 >
                   <a
                     href="javascript:void(0)"
-                    @click="videoOpen = true; videoSrc = 'https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1' "
+                    @click="videoOpen = true; videoSrc = 'https://youtu.be/UvgpiLt-OMc?si=vasqQOt010oCUcGK' "
                     class="absolute z-20 flex h-20 w-20 items-center justify-center rounded-full bg-white text-pink-600 md:h-[100px] md:w-[100px]"
                   >
                     <span
@@ -803,7 +801,7 @@
                   </p>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="/login"
                   class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-pink-600 transition hover:border-pink-600 hover:bg-pink-600 hover:text-white"
                 >
                   Choose Basic
@@ -1112,7 +1110,7 @@
                   </p>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="/login"
                   class="block w-full rounded-md border border-pink-600 bg-pink-600 p-4 text-center text-base font-semibold text-white transition hover:bg-opacity-90"
                 >
                   Choose Gold
@@ -1421,7 +1419,7 @@
                   </p>
                 </div>
                 <a
-                  href="javascript:void(0)"
+                  href="/login"
                   class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-pink-600 transition hover:border-pink-600 hover:bg-pink-600 hover:text-white"
                 >
                   Choose Master
@@ -1703,10 +1701,10 @@
                   class="relative z-10 mb-10 overflow-hidden rounded-xl border border-pink-600 border-opacity-20 bg-white py-10 px-8 shadow-pricing sm:p-12 lg:py-10 lg:px-6 xl:p-12"
                 >
                   <span class="mb-4 block text-lg font-semibold text-pink-600">
-                      MASTER
+                      PREMIUM
                   </span>
-                  <h6 class="mb-5 text-[25px] font-bold text-dark">
-                      $1000 - $1999
+                  <h6 class="mb-5 text-[21px] font-bold text-dark">
+                      $2000 - $Unlimited
                   </h6>
                   <p
                     class="mb-8 border-b border-[#F2F2F2] pb-8 text-base text-body-color"
@@ -1714,13 +1712,13 @@
                   </p>
                   <div class="mb-7">
                     <p class="mb-1 text-base leading-loose text-body-color">
-                      80% After 72 Hours
+                      100% After 4 Days
                     </p>
                     <p class="mb-1 text-base leading-loose text-body-color">
                       Daily Earnings
                     </p>
                     <p class="mb-1 text-base leading-loose text-body-color">
-                      72 Hours Return
+                      4 Days Return
                     </p>
                     <p class="mb-1 text-base leading-loose text-body-color">
                       Instant Withdrawal
@@ -1730,10 +1728,10 @@
                     </p>
                   </div>
                   <a
-                    href="javascript:void(0)"
+                    href="/login"
                     class="block w-full rounded-md border border-[#D4DEFF] bg-transparent p-4 text-center text-base font-semibold text-pink-600 transition hover:border-pink-600 hover:bg-pink-600 hover:text-white"
                   >
-                    Choose Master
+                    Choose Premium
                   </a>
 
                   <div>
@@ -2184,16 +2182,13 @@
                   </div>
                   <div class="w-full">
                     <h4 class="text-lg font-semibold text-black">
-                      How long we deliver your first blog post?
+                        How do I open my massprofit.net Account?
                     </h4>
                   </div>
                 </button>
                 <div x-show="openFaq4" class="faq-content pl-[62px]">
                   <p class="py-3 text-base leading-relaxed text-body-color">
-                    It takes 2-3 weeks to get your first blog post ready. That
-                    includes the in-depth research & creation of your monthly
-                    content marketing strategy that we do before writing your
-                    first blog post, Ipsum available .
+                    It's quite easy and convenient. Follow this link, fill in the registration form and then press "Register".
                   </p>
                 </div>
               </div>
@@ -2222,16 +2217,13 @@
                   </div>
                   <div class="w-full">
                     <h4 class="text-lg font-semibold text-black">
-                      How long we deliver your first blog post?
+                        How many times can i reinvest?
                     </h4>
                   </div>
                 </button>
                 <div x-show="openFaq5" class="faq-content pl-[62px]">
                   <p class="py-3 text-base leading-relaxed text-body-color">
-                    It takes 2-3 weeks to get your first blog post ready. That
-                    includes the in-depth research & creation of your monthly
-                    content marketing strategy that we do before writing your
-                    first blog post, Ipsum available .
+                    Mapleinvestment.ltd does not allow Investment and reinvestment to exceed more than three(3) times in starter plan. If you Invest or reinvest more than that it requires to enter Premium plan before you can make withdraw. That is the instruction from UK Company house during the time of company registration.
                   </p>
                 </div>
               </div>
@@ -2260,16 +2252,13 @@
                   </div>
                   <div class="w-full">
                     <h4 class="text-lg font-semibold text-black">
-                      How long we deliver your first blog post?
+                        Who manages the funds?
                     </h4>
                   </div>
                 </button>
                 <div x-show="openFaq6" class="faq-content pl-[62px]">
                   <p class="py-3 text-base leading-relaxed text-body-color">
-                    It takes 2-3 weeks to get your first blog post ready. That
-                    includes the in-depth research & creation of your monthly
-                    content marketing strategy that we do before writing your
-                    first blog post, Ipsum available .
+                    These funds are managed by a team of Massprofit investment experts.
                   </p>
                 </div>
               </div>
@@ -2323,8 +2312,8 @@
                 <h2
                   class="mb-6 text-3xl font-bold leading-tight text-white sm:mb-8 sm:text-[38px] lg:mb-0"
                 >
-                  Get started with <br class="hidden xs:block" />
-                  our free trial
+                  Get started today <br class="hidden xs:block" />
+
                 </h2>
               </div>
               <div class="w-full px-4 lg:w-1/2">
@@ -2333,7 +2322,7 @@
                     href="javascript:void(0)"
                     class="my-1 inline-block rounded bg-dark py-4 px-6 text-base font-medium text-white transition hover:bg-opacity-90 md:px-9 lg:px-6 xl:px-9"
                   >
-                    Start Free Trial
+                    Get Started
                   </a>
                 </div>
               </div>
