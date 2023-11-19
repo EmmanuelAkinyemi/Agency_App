@@ -26,11 +26,10 @@
                 </p>
                 <div class="mt-10  w-full flex max-w-md mx-auto lg:mx-0">
                     <div class="flex sm:flex-row flex-col gap-5 w-full">
-                        <form action="{{ url("contact_mail") }}"
+                        <form action=""
                             method="post"
                             class="py-1 pl-6 w-full pr-1 flex gap-3 items-center text-gray-600 shadow-lg shadow-gray-200/20
                             border border-gray-200 bg-gray-100 rounded-full ease-linear focus-within:bg-white  focus-within:border-purple-600">
-                            {{ csrf_field() }}
                             <span class="min-w-max pr-2 border-r border-gray-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -130,28 +129,26 @@
                                 <h4 class="mb-1 text-xl font-bold text-dark">
                                     Email Address
                                 </h4>
-                                <p class="text-base text-body-color">info@yourdomain.com</p>
+                                <p class="text-base text-body-color">support@massprofit.net</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-5/12">
                     <div class="relative rounded-lg bg-white p-8 shadow-lg sm:p-12">
-                        <form>
+                        <form action="{{ url("contact_mail") }}" method="post">
+                            @csrf
                             <div class="mb-6">
-                                <input type="text" placeholder="Your Name"
+                                <input name="name" type="text" placeholder="Your Name"
                                     class="border-[f0f0f0] w-full rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-pink-600 focus-visible:shadow-none" />
                             </div>
                             <div class="mb-6">
-                                <input type="email" placeholder="Your Email"
+                                <input name="email" type="email" placeholder="Your Email"
                                     class="border-[f0f0f0] w-full rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-pink-600 focus-visible:shadow-none" />
                             </div>
+
                             <div class="mb-6">
-                                <input type="text" placeholder="Your Phone"
-                                    class="border-[f0f0f0] w-full rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-pink-600 focus-visible:shadow-none" />
-                            </div>
-                            <div class="mb-6">
-                                <textarea rows="6" placeholder="Your Message"
+                                <textarea name="message" rows="6" placeholder="Your Message"
                                     class="border-[f0f0f0] w-full resize-none rounded border py-3 px-[14px] text-base text-body-color outline-none focus:border-pink-600 focus-visible:shadow-none"></textarea>
                             </div>
                             <div>

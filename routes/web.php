@@ -40,7 +40,7 @@ Route::get('/contact', [PageController::class, 'contact']);
 //contact page for the agency
 Route::get('/privacy', [PageController::class, 'privacy']);
 
-
+Route::post('contact_mail', [PageController::class, 'contact_mail_send']);
 
 //authentication pages
 
