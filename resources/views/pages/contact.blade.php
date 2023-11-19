@@ -26,9 +26,11 @@
                 </p>
                 <div class="mt-10  w-full flex max-w-md mx-auto lg:mx-0">
                     <div class="flex sm:flex-row flex-col gap-5 w-full">
-                        <form action="#"
+                        <form action="{{ url("contact_mail") }}"
+                            method="post"
                             class="py-1 pl-6 w-full pr-1 flex gap-3 items-center text-gray-600 shadow-lg shadow-gray-200/20
                             border border-gray-200 bg-gray-100 rounded-full ease-linear focus-within:bg-white  focus-within:border-purple-600">
+                            {{ csrf_field() }}
                             <span class="min-w-max pr-2 border-r border-gray-200">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" fill="none" viewBox="0 0 24 24"
                                     stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
@@ -36,7 +38,7 @@
                                         d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
                                 </svg>
                             </span>
-                            <input type="email" name="" id="" placeholder="johndoe@gmail.com"
+                            <input type="email" name="email" id="" placeholder="johndoe@gmail.com"
                                 class="w-full py-3 outline-none bg-transparent">
                             <button
                                 class="flex text-white justify-center items-center w-max min-w-max sm:w-max px-6 h-12 rounded-full outline-none relative overflow-hidden border duration-300 ease-linear
