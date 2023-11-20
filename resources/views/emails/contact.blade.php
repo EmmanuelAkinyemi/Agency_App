@@ -15,34 +15,19 @@
 <body>
     <main class="container">
 
-        <section class="max-w-2xl px-6 py-8 mx-auto bg-white">
+        <section class="max-w-2xl px-6 py-8 mx-auto bg-white dark:bg-black">
             <header>
-                <a href="#">
-                    <img class="w-auto h-7 sm:h-8" src="{{ asset('images/logo/') }}" alt="">
+                <a href="https://massprofit.net">
+                    <img class="w-auto h-7 sm:h-8" src="{{ asset('images/logo/logo.png') }}" alt="massprofit">
                 </a>
             </header>
 
             <main class="mt-8">
-                <h2 class="text-gray-700 dark:text-gray-200">Hi MassProfit,</h2>
+                <h2 class="text-gray-700 py-3 dark:text-gray-200">Message For MassProfit,</h2>
 
-                <p class="mt-2 leading-loose text-gray-600 dark:text-gray-300">
+                <p class="mt-2 mb-2 leading-loose text-gray-600 dark:text-gray-300">
                     This {{ $user->name }}
                 </p>
-
-                <div class="flex items-center mt-4 gap-x-4">
-                    <p
-                        class="flex items-center justify-center w-10 h-10 text-2xl font-medium text-blue-500 border border-blue-500 rounded-md dark:border-blue-400 dark:text-blue-400 ">
-                        6</p>
-                    <p
-                        class="flex items-center justify-center w-10 h-10 text-2xl font-medium text-blue-500 border border-blue-500 rounded-md dark:border-blue-400 dark:text-blue-400 ">
-                        2</p>
-                    <p
-                        class="flex items-center justify-center w-10 h-10 text-2xl font-medium text-blue-500 border border-blue-500 rounded-md dark:border-blue-400 dark:text-blue-400 ">
-                        8</p>
-                    <p
-                        class="flex items-center justify-center w-10 h-10 text-2xl font-medium text-blue-500 border border-blue-500 rounded-md dark:border-blue-400 dark:text-blue-400 ">
-                        9</p>
-                </div>
                 <p class="mt-4 leading-loose text-gray-600 dark:text-gray-300">
                     {{ $user->message }}
                 </p>
