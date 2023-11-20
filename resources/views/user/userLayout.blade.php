@@ -145,7 +145,7 @@
 							<span class="nav-text">Widget</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="app-profile.html">Withdraw</a></li>
+                            <li><a href="/withdrawal">Withdraw</a></li>
 							<li><a href="post-details.html">Deposit</a></li>
                         </ul>
                     </li>

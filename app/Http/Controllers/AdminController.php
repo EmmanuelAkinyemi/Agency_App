@@ -43,7 +43,7 @@ class AdminController extends Controller
         return view('admin.login');
     }
 
-    public function authenticate(Request $request)
+    public function auth(Request $request)
     {
         $formsFields = $request->validate([
             'email' => ['required', 'email'],

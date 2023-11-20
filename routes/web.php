@@ -78,6 +78,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/dashboard', [PageController::class, 'dashboard']);
 
+    Route::get('/withdrawal', [UserController::class, 'withdrawal']);
+
     Route::get('/admin/dashboard', [AdminController::class, 'admin']);
 
     Route::get('/admin/users', [AdminController::class, 'adminUsers']);

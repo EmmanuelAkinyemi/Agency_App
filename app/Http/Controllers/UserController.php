@@ -41,23 +41,6 @@ class UserController extends Controller
         return view('auth.signin');
     }
 
-    // public function authenticate(Request $request)
-    // {
-    //     $formsFields = $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => 'required'
-    //     ]);
-
-    //     if(auth()->attempt($formsFields))
-    //     {
-    //         $request->session()->regenerate();
-
-    //         return redirect('/dashboard')->with('message', 'You are now logged in');
-    //     }
-
-    //     return back()->with(['error', 'Invalid Credentials']);
-    // }
-
     public function authenticate(Request $request)
     {
         $credentials = [
@@ -71,6 +54,26 @@ class UserController extends Controller
         }
 
         return back()->with('error', 'Invalid Credentials');
+    }
+
+    public function withdrawal()
+    {
+        return view("user.withdrawal");
+    }
+
+    public function reqWithdrawal(Request $request)
+    {
+        $credentials = [
+            'username' => $request->username,
+            'password' => $request->password
+        ];
+
+        if(Auth::attempt($credentials))
+        {
+            return redirect('/withdrawal')->with('message', 'withdrawal request succesfully sent');
+        }
+
+        return back()->with('error', 'unknown request');
     }
 
     public function logout(Request $request)
