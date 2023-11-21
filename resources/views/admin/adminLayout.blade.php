@@ -31,13 +31,13 @@ Coded by www.creative-tim.com
     <!-- CSS Files -->
     <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/admin/css/paper-dashboard.css?v=2.0.1') }}" rel="stylesheet" />
-    <!-- CSS Just for demo purpose, don't include it in your project -->
-    {{-- <link href="{{ asset("assets/admin/demo/demo.css") }}" rel="stylesheet" /> --}}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
+    
 </head>
 
 <body class="">
+    <x-flash-message/>
     <div class="wrapper ">
-        <x-flash-message/>
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
                 <a href="https://www.creative-tim.com" class="simple-text logo-normal">
@@ -145,7 +145,6 @@ Coded by www.creative-tim.com
                     </div>
                 </div>
             </footer>
-            <x-flash-message/>
         </div>
     </div>
     <!--   Core JS Files   -->

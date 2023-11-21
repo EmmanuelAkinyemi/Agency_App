@@ -91,6 +91,6 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
 
-        return redirect()->route('/admin/login');
+        return redirect()->route('login');
     }
 }

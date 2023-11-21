@@ -26,6 +26,7 @@
     <link href="{{ asset('assets/user/css/style.css') }}" rel="stylesheet">
     <link href="../../cdn.lineicons.com/2.0/LineIcons.css" rel="stylesheet">
     <link href="{{ asset('assets/user/vendor/owl-carousel/owl.carousel.css') }}" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
 
 </head>
 
@@ -44,6 +45,7 @@
     <!--*******************
         Preloader end
     ********************-->
+    <x-flash-message/>
 
     <!--**********************************
         Main wrapper start
