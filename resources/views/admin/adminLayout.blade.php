@@ -37,7 +37,7 @@ Coded by www.creative-tim.com
 
 <body class="">
     <div class="wrapper ">
-
+        <x-flash-message/>
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
                 <a href="https://www.creative-tim.com" class="simple-text logo-normal">
@@ -110,27 +110,17 @@ Coded by www.creative-tim.com
                         </form>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link btn-magnify" href="javascript:;">
-                                    <i class="nc-icon nc-layout-11"></i>
-                                    <p>
-                                        <span class="d-lg-none d-md-block">Stats</span>
-                                    </p>
-                                </a>
+                                <form method="post" action="/admin/logout">
+                                    @csrf
+                                    <button type="submit" class="btn" >Log Out</a>
+                                </form>
                             </li>
-                            <li class="nav-item btn-rotate dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com"
-                                    id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <i class="nc-icon nc-bell-55"></i>
-                                    <p>
-                                        <span class="d-lg-none d-md-block">Some Actions</span>
-                                    </p>
-                                </a>
+                            <li class="nav-item dropdown">
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Profile</a>
+                                    <a class="dropdown-item" href="/admin/profile">Profile</a>
                                     <form method="post" action="/admin/logout">
                                         @csrf
-                                        <button type="submit" class="dropdown-item" href="#">Log Out</a>
+                                        <button type="submit" class="dropdown-item" >Log Out</a>
                                     </form>
                                 </div>
                             </li>

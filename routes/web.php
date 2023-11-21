@@ -50,29 +50,26 @@ Route::post('contact_mail', [PageController::class, 'contact_mail_send']);
 **authentication
 **go in here
 **/
-Route::group(['middleware' => ['guest']], function () {
 
-    Route::get('/signup', [UserController::class, 'create']);
+Route::get('/signup', [UserController::class, 'create']);
 
-    Route::post('/users', [UserController::class, 'store']);
+Route::post('/users', [UserController::class, 'store']);
 
-    Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
-    Route::post('/authenticate', [UserController::class, 'authenticate'])->name('login');
+Route::post('/authenticate', [UserController::class, 'authenticate']);
 
-    Route::get('/admin/login', [AdminController::class, 'login'])->name("login");
+Route::get('/admin/login', [AdminController::class, 'login'])->name("login");
 
-    Route::post('/admin/login', [AdminController::class, 'auth'])->name("login.authenticate");
+Route::post('/admin/login', [AdminController::class, 'auth'])->name("login.auth");
 
-    Route::get('/admin/register', [AdminController::class, 'register']);
+Route::get('/admin/register', [AdminController::class, 'register']);
 
-    Route::post('/admin/users', [AdminController::class, 'store']);
+Route::post('/admin/users', [AdminController::class, 'store']);
 
-    Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->name('auth.logout');
 
-    Route::post('/admin/logout', [AdminController::class, 'logout']);
-
-});
+Route::post('/admin/logout', [AdminController::class, 'logout']);
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -96,5 +93,4 @@ Route::group(['middleware' => ['auth']], function () {
 
 
     Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
-
 });
