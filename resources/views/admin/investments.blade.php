@@ -17,14 +17,21 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
+
                                     <th>
-                                        Name
+                                        user email
                                     </th>
                                     <th>
-                                        email
+                                        plan
                                     </th>
-                                    <th class="text-right">
-                                        Investment
+                                    <th>
+                                        Amount
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th>
+                                        Date Created
                                     </th>
                                 </thead>
                                 <tbody>

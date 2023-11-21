@@ -32,11 +32,10 @@ Coded by www.creative-tim.com
     <link href="{{ asset('assets/admin/css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('assets/admin/css/paper-dashboard.css?v=2.0.1') }}" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js"></script>
-    
+
 </head>
 
 <body class="">
-    <x-flash-message/>
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
@@ -112,7 +111,7 @@ Coded by www.creative-tim.com
                             <li class="nav-item">
                                 <form method="post" action="/admin/logout">
                                     @csrf
-                                    <button type="submit" class="btn" >Log Out</a>
+                                    <button type="submit" class="btn">Log Out</a>
                                 </form>
                             </li>
                             <li class="nav-item dropdown">
@@ -120,7 +119,7 @@ Coded by www.creative-tim.com
                                     <a class="dropdown-item" href="/admin/profile">Profile</a>
                                     <form method="post" action="/admin/logout">
                                         @csrf
-                                        <button type="submit" class="dropdown-item" >Log Out</a>
+                                        <button type="submit" class="dropdown-item">Log Out</a>
                                     </form>
                                 </div>
                             </li>
@@ -130,6 +129,8 @@ Coded by www.creative-tim.com
             </nav>
             <!-- End Navbar -->
             @yield('children')
+            <x-flash-message />
+
             <footer class="footer footer-black  footer-white ">
                 <div class="container-fluid">
                     <div class="row text-center justify-content-center">
@@ -147,6 +148,7 @@ Coded by www.creative-tim.com
             </footer>
         </div>
     </div>
+
     <!--   Core JS Files   -->
     <script src="{{ asset('assets/admin/js/core/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/admin/js/core/popper.min.js') }}"></script>

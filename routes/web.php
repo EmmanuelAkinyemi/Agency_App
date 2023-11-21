@@ -91,6 +91,7 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin/create-invest', [InvestmentController::class, 'create']);
 
+    Route::post('/admin/create-invest', [InvestmentController::class, 'store']);
 
     Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
 });
