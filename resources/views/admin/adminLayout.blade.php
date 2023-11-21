@@ -155,7 +155,7 @@ Coded by www.creative-tim.com
                     </div>
                 </div>
             </footer>
-            <x-alert/>
+            <x-flash-message/>
         </div>
     </div>
     <!--   Core JS Files   -->

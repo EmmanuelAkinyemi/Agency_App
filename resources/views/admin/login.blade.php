@@ -18,7 +18,7 @@
         <div class="flex justify-center w-full h-full my-auto xl:gap-14 lg:justify-normal md:gap-5 draggable">
             <div class="flex items-center justify-center w-full lg:p-12">
                 <div class="flex items-center xl:p-10">
-                    <form method="POST" action="{{ route("login.authenticate") }}"
+                    <form method="POST" action="{{ route("login.auth") }}"
                         class="flex flex-col w-full h-full pb-6 text-center bg-white rounded-3xl">
                         @csrf
                         <h3 class="mb-3 text-4xl font-extrabold text-dark-grey-900">Sign In</h3>

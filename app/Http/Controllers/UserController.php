@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\WithdrawalMail;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -61,19 +63,21 @@ class UserController extends Controller
         return view("user.withdrawal");
     }
 
-    public function reqWithdrawal(Request $request)
+    public function withdrawal_mail_send(Request $request)
     {
-        $credentials = [
-            'username' => $request->username,
-            'password' => $request->password
-        ];
+        Mail::to('emmanuelakinyemi772@gmail.com')->send(new WithdrawalMail($request));
+        return redirect("/withdrawal");
+    }
 
-        if(Auth::attempt($credentials))
-        {
-            return redirect('/withdrawal')->with('message', 'withdrawal request succesfully sent');
-        }
+    public function deposit()
+    {
+        return view("user.deposit");
+    }
 
-        return back()->with('error', 'unknown request');
+    public function deposit_mail_send(Request $request)
+    {
+        Mail::to('emmanuelakinyemi772@gmail.com')->send(new WithdrawalMail($request));
+        return redirect("/deposit");
     }
 
     public function logout(Request $request)

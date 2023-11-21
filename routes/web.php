@@ -62,7 +62,7 @@ Route::group(['middleware' => ['guest']], function () {
 
     Route::get('/admin/login', [AdminController::class, 'login'])->name("login");
 
-    Route::post('/admin/login', [AdminController::class, 'authenticate'])->name("login.authenticate");
+    Route::post('/admin/login', [AdminController::class, 'auth'])->name("login.authenticate");
 
     Route::get('/admin/register', [AdminController::class, 'register']);
 
@@ -79,6 +79,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', [PageController::class, 'dashboard']);
 
     Route::get('/withdrawal', [UserController::class, 'withdrawal']);
+
+    Route::post('withdrawal_mail', [UserController::class, 'withdrawal_mail_send']);
+
+    Route::get('/deposit', [UserController::class, 'deposit']);
+
+    Route::post('deposit_mail', [UserController::class, 'deposit_mail_send']);
 
     Route::get('/admin/dashboard', [AdminController::class, 'admin']);
 
