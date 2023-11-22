@@ -14,12 +14,13 @@ class InvestmentController extends Controller
         return view("admin.create-invest");
     }
 
-    public function store(Request $request)
+    public function store_invest(Request $request)
     {
         $formsFields = $request->validate([
             'user-email' => 'required',
             'plan_type' => 'required',
-            'deposit_amount' => 'required|min:3'
+            'deposit_amount' => 'required|min:3',
+            'status' => 'required'
         ]);
 
         $investment = Investment::create($formsFields);
