@@ -28,15 +28,16 @@
                                                     class="fs-13">{{ $investment->created_at->format('M-d-Y') }}</span>
                                             @endforeach
                                         </div>
-                                    @else
-                                    <h2 class="fs-36 text-black font-w600">$0</h2>
-                                    @endif
+
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"
                                             data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'></span>
                                         <small class="text-primary"></small>
                                         <span class="circle bgl-primary"></span>
                                     </div>
+                                    @else
+                                    <h2 class="fs-36 text-black font-w600">$0</h2>
+                                    @endif
                                 </div>
                             </div>
                         </div>

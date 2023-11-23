@@ -15,14 +15,27 @@ class AdminController extends Controller
 
     public function admin()
     {
-        return view('admin.dashboard');
+        // Calculate the total deposit
+        $totalDeposit = Investment::sum('deposit_amount');
+
+        // Count the total number of users with usertype 'user'
+        $totalUsers = User::where('usertype', 'user')->count();
+
+        // Count the total number of investments
+        $totalInvestments = Investment::count();
+
+        //pass the totals to the view
+        return view('admin.dashboard', [
+            'totalDeposit' => $totalDeposit,
+            'totalUsers' => $totalUsers,
+            'totalInvestments' => $totalInvestments,
+        ]);
     }
 
     public function adminUsers()
     {
-        return view('admin.users',[
-            'users' => User::all()
-        ]);
+        $users = User::where('usertype', 'user')->with('investments')->get();
+        return view('admin.users',['users' => $users]);
     }
 
     public function adminInvestments()

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\InvestmentController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\PageController;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
@@ -59,6 +60,12 @@ Route::get('/login', [UserController::class, 'login'])->name('login');
 
 Route::post('users/authenticate', [UserController::class, 'authenticate']);
 
+Route::put('/users/update-password', [UserController::class, 'updatePassword'])->name('users.update-password');
+
+Route::get('/users/{user}/edit-password', [UserProfileController::class, 'editPassword'])->name('users.edit-password');
+
+Route::put('/users/update-password', [UserProfileController::class, 'updatePassword'])->name('users.update-password');
+
 Route::post('/logout', [UserController::class, 'logout'])->name('auth.logout');
 
 Route::group(['middleware' => ['auth']], function () {
@@ -84,6 +91,12 @@ Route::group(['middleware' => ['auth']], function () {
     // Route::post('/admin/create-invest', [InvestmentController::class, 'store_invest'])->name("store_invest");
 
     Route::post('/admin/store-invest', [InvestmentController::class, 'store_invest'])->name("investment.store");
+
+    Route::get('/admin/{investment}/edit', [InvestmentController::class, 'edit'])->name('investments.edit');
+
+    Route::put('/admin/{investment}', [InvestmentController::class, 'update'])->name('investments.update');
+
+    Route::delete('/investments/{investment}', [InvestmentController::class, 'destroy'])->name('investments.destroy');
 
     Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
 });

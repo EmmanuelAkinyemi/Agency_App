@@ -25,11 +25,8 @@
     <div class="wrapper ">
         <div class="sidebar" data-color="white" data-active-color="danger">
             <div class="logo">
-                <a href="https://www.creative-tim.com" class="simple-text logo-normal">
+                <a href="/admin/dashboard" class="simple-text logo-normal">
                     MassProfit
-                    <!-- <div class="logo-image-big">
-            <img src="../assets/img/logo-big.png">
-          </div> -->
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -95,7 +92,7 @@
                         </form>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <form method="post" action="{{ url("logout") }}">
+                                <form method="post" action="{{ url('logout') }}">
                                     @csrf
                                     <button type="submit" class="btn">Log Out</a>
                                 </form>

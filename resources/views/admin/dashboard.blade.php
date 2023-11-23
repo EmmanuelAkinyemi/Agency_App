@@ -15,7 +15,7 @@
               <div class="col-7 col-md-8">
                 <div class="numbers">
                   <p class="card-category">Users</p>
-                  <p class="card-title">150K<p>
+                  <p class="card-title">{{ $totalUsers >= 1000 ? number_format($totalUsers / 1000, 2) . 'K' : $totalUsers }}<p>
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@
               <div class="col-7 col-md-8">
                 <div class="numbers">
                   <p class="card-category">Total Revenue</p>
-                  <p class="card-title">$ 1,345<p>
+                  <p class="card-title">${{ $totalDeposit >= 1000 ? number_format($totalDeposit / 1000, 1) . 'K' : $totalDeposit }}<p>
                 </div>
               </div>
             </div>
@@ -93,7 +93,7 @@
               <div class="col-7 col-md-8">
                 <div class="numbers">
                   <p class="card-category">Investments</p>
-                  <p class="card-title">+45K<p>
+                  <p class="card-title">{{ $totalInvestments }}<p>
                 </div>
               </div>
             </div>
@@ -108,6 +108,6 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 @endsection
