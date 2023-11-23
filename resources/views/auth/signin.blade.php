@@ -60,13 +60,6 @@
                 />
               </div>
             </form>
-
-            <a
-              href="javascript:void(0)"
-              class="mb-2 inline-block text-base text-[#adadad] hover:text-pink-600 hover:underline"
-            >
-              Forget Password?
-            </a>
             <p class="text-base text-[#adadad]">
               Not a member yet?
               <a

@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserProfileController extends Controller
 {
+    public function editPassword()
+    {
+        return view('user.profile');
+    }
+
     public function updatePassword(Request $request)
     {
         $request->validate([

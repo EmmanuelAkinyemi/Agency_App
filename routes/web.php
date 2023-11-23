@@ -51,22 +51,23 @@ Route::post('contact_mail', [PageController::class, 'contact_mail_send']);
 **authentication
 **go in here
 **/
+Route::group(['middleware' => ['guest']], function () {
+    Route::get('/signup', [UserController::class, 'create']);
 
-Route::get('/signup', [UserController::class, 'create']);
+    Route::post('/users', [UserController::class, 'store']);
 
-Route::post('/users', [UserController::class, 'store']);
+    Route::get('/login', [UserController::class, 'login'])->name('login');
 
-Route::get('/login', [UserController::class, 'login'])->name('login');
+    Route::post('users/authenticate', [UserController::class, 'authenticate']);
 
-Route::post('users/authenticate', [UserController::class, 'authenticate']);
+    Route::put('/users/update-password', [UserController::class, 'updatePassword'])->name('users.update-password');
 
-Route::put('/users/update-password', [UserController::class, 'updatePassword'])->name('users.update-password');
+    Route::get('/profile/edit-password', [UserProfileController::class, 'editPassword'])->name('profile.edit-password');
+    Route::put('/profile/update-password', [UserProfileController::class, 'updatePassword'])->name('profile.update-password');
 
-Route::get('/users/{user}/edit-password', [UserProfileController::class, 'editPassword'])->name('users.edit-password');
 
-Route::put('/users/update-password', [UserProfileController::class, 'updatePassword'])->name('users.update-password');
+});
 
-Route::post('/logout', [UserController::class, 'logout'])->name('auth.logout');
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -100,3 +101,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
 });
+
+Route::post('/logout', [UserController::class, 'logout'])->name('auth.logout');

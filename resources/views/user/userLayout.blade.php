@@ -45,7 +45,6 @@
     <!--*******************
         Preloader end
     ********************-->
-    <x-flash-message/>
 
     <!--**********************************
         Main wrapper start
@@ -108,19 +107,18 @@
                                     <div class="header-info">
                                         <span class="text-black"><span
                                                 class="mr-3 ">{{ auth()->user()->name }}</span></span>
-                                        <p class="fs-12 mb-0">user</p>
                                     </div>
                                     <img src="{{ asset('assets/user/images/profile/17.jpg') }}" width="20"
                                         alt="" />
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <form method="post" action="{{ url("logout") }}">
+                                    <form method="post" action="{{ url('logout') }}">
                                         @csrf
                                         <button type="submit" class="btn">
-                                            <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg"
-                                                class="text-danger" width="18" height="18"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger"
+                                                width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round">
                                                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                                                 <polyline points="16 17 21 12 16 7"></polyline>
                                                 <line x1="21" y1="12" x2="9" y2="12">
@@ -160,6 +158,7 @@
                         <ul aria-expanded="false">
                             <li><a href="/withdrawal">Withdraw</a></li>
                             <li><a href="/deposit">Deposit</a></li>
+                            {{-- <li><a href="/profile/edit-password">Profile</a></li> --}}
                         </ul>
                     </li>
                 </ul>
@@ -175,6 +174,7 @@
         <div class="content-body">
             <!-- row -->
             @yield('content')
+            <x-flash-message />
         </div>
         <!--**********************************
             Content body end
