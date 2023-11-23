@@ -24,6 +24,7 @@ class UserController extends Controller
     {
         $formsFields = $request->validate([
             'name' => ['required', 'min:3'],
+            'usertype' => 'required',
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => 'required|confirmed|min:6'
         ]);
@@ -46,14 +47,26 @@ class UserController extends Controller
 
     public function authenticate(Request $request)
     {
-        $credentials = [
-            'username' => $request->username,
-            'password' => $request->password
-        ];
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-        if(Auth::attempt($credentials))
-        {
-            return redirect('/dashboard')->with('message', 'succesfully logged in');
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+            // Authentication successful
+
+            // Get the authenticated user
+            $user = Auth::user();
+
+            // Check the user type
+            if ($user->usertype === 'admin') {
+                // Redirect to admin dashboard
+                return redirect('admin/dashboard');
+            } elseif ($user->usertype === 'user') {
+                // Redirect to user dashboard
+                return redirect('/dashboard');
+            }
         }
 
         return back()->with('error', 'Invalid Credentials');

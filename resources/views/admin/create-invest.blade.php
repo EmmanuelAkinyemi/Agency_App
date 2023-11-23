@@ -10,10 +10,10 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form">
-                        <form action="/admin/create-invest" method="post">
+                        <form action="/admin/store-invest" method="post">
                             @csrf
                             <div class="mb-3">
-                                <input name="email" class="py-3 px-2 form-control rounded form-control-lg" type="email" placeholder="User Email">
+                                <input name="user_email" class="py-3 px-2 form-control rounded form-control-lg" type="email" placeholder="User Email">
                             </div>
                             <div class="mb-3">
                                 <input name="plan_type" class="py-3 px-2 form-control rounded form-control-lg" type="text" placeholder="Premium">

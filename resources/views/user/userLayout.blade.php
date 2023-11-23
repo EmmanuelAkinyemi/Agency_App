@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <title>Massprofit - User Dashboard</title>
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/user/images/favicon.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo/icon.png') }}">
     <link href="{{ asset('assets/user/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
     <!-- Vectormap -->
     <link href="{{ asset('assets/user/vendor/jqvmap/css/jqvmap.min.css') }}" rel="stylesheet">
@@ -56,10 +56,8 @@
             Nav header start
         ***********************************-->
         <div class="nav-header">
-            <a href="index.html" class="brand-logo">
-                <img class="logo-abbr" src="{{ asset('assets/user/images/logo.png') }}" alt="">
-                <img class="logo-compact" src="{{ asset('assets/user/images/logo-text.png') }}" alt="">
-                <img class="brand-title" src="{{ asset('assets/user/images/logo-text.png') }}" alt="">
+            <a href="/dashboard" class="brand-logo">
+                <img class="brand-title" src="{{ asset('images/logo/logo.png') }}" alt="">
             </a>
 
             <div class="nav-control">

@@ -57,19 +57,9 @@ Route::post('/users', [UserController::class, 'store']);
 
 Route::get('/login', [UserController::class, 'login'])->name('login');
 
-Route::post('/authenticate', [UserController::class, 'authenticate']);
-
-Route::get('/admin/login', [AdminController::class, 'login'])->name("login");
-
-Route::post('/admin/login', [AdminController::class, 'auth'])->name("login.auth");
-
-Route::get('/admin/register', [AdminController::class, 'register']);
-
-Route::post('/admin/users', [AdminController::class, 'store']);
+Route::post('users/authenticate', [UserController::class, 'authenticate']);
 
 Route::post('/logout', [UserController::class, 'logout'])->name('auth.logout');
-
-Route::post('/admin/logout', [AdminController::class, 'logout']);
 
 Route::group(['middleware' => ['auth']], function () {
 
@@ -87,13 +77,13 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/admin/users', [AdminController::class, 'adminUsers']);
 
-    Route::get('/admin/investments', [AdminController::class, 'adminInvestments']);
+    Route::get('/admin/investments', [AdminController::class, 'adminInvestments'])->name("investment.create");
 
     Route::get('/admin/create-invest', [InvestmentController::class, 'create']);
 
     // Route::post('/admin/create-invest', [InvestmentController::class, 'store_invest'])->name("store_invest");
 
-    Route::post('/admin/create-invest', [InvestmentController::class, 'store_invest']);
+    Route::post('/admin/store-invest', [InvestmentController::class, 'store_invest'])->name("investment.store");
 
     Route::get('/admin/profile', [AdminController::class, 'adminProfile']);
 });

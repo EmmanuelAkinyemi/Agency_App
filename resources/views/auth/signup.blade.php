@@ -43,6 +43,18 @@
                 <span class="text-base text-red-500 mt-1">{{ $message }}</span>
                 @enderror
               </div>
+              <div class="mb-6 hidden">
+                <input
+                  type="text"
+                  placeholder="Usertype"
+                  name="usertype"
+                  value="user"
+                  class="border-[#E9EDF4] w-full rounded-md border bg-[#FCFDFE] py-3 px-5 text-base text-body-color placeholder-[#ACB6BE] outline-none focus:border-pink-600 focus-visible:shadow-none"
+                />
+                @error('usertype')
+                <span class="text-base text-red-500 mt-1">{{ $message }}</span>
+                @enderror
+              </div>
               <div class="mb-6">
                 <input
                   type="password"

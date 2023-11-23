@@ -19,4 +19,9 @@ class Investment extends Model
         'deposit_amount',
         'status'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Support\Facades\Mail;
 
@@ -42,7 +43,11 @@ class PageController extends Controller
 
     public function dashboard()
     {
-        return view('user.dashboard');
+        $user = Auth::user();
+
+        // Retrieve investments for the authenticated user
+        $investments = $user->investments;
+        return view('user.dashboard', ['investments' => $investments]);
     }
 
     public function adminProfile()

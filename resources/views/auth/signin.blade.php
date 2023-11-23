@@ -23,7 +23,7 @@
                 </div>
               @endif
             </div>
-            <form method="POST" action="{{ route('login') }}">
+            <form method="POST" action="users/authenticate">
                 @csrf
 
               <div class="mb-6">
