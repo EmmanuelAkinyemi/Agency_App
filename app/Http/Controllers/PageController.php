@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Investment;
 use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
@@ -45,9 +45,23 @@ class PageController extends Controller
     {
         $user = Auth::user();
 
-        // Retrieve investments for the authenticated user
-        $investments = $user->investments;
-        return view('user.dashboard', ['investments' => $investments]);
+        // Total deposit
+        $totalDeposit = Investment::where('user_email', $user->email)->sum('deposit_amount');
+
+        // Active deposit
+        $activeDeposit = Investment::where('user_email', $user->email)
+            ->where('status', 'active')
+            ->sum('deposit_amount');
+
+        // Total withdrawal
+        $totalWithdrawal = Investment::where('user_email', $user->email)
+            ->where('status', 'closed') // Assuming 'closed' status indicates a withdrawal
+            ->sum('deposit_amount');
+
+        // Total profit
+        $totalProfit = $totalWithdrawal - $totalDeposit;
+
+        return view('user.dashboard', compact('user', 'totalDeposit', 'activeDeposit', 'totalWithdrawal', 'totalProfit'));
     }
 
     public function adminProfile()

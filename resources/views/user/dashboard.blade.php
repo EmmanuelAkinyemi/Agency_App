@@ -18,26 +18,25 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="media align-items-center">
-                                    @if ($investments->count() > 0)
+
                                         <div class="media-body me-3">
-                                            @foreach ($investments as $investment)
-                                                <h2 class="fs-36 text-black font-w600">${{ number_format($investment->deposit_amount) }}</h2>
-                                                <p class="fs-18 mb-0 text-black font-w500">{{ $investment->plan_type }}
+
+                                                <h2 class="fs-36 text-black font-w600">
+                                                    ${{ $totalDeposit }}
+                                                </h2>
+                                                <p class="fs-18 mb-0 text-black font-w500">Total Deposit
                                                 </p>
-                                                <span
-                                                    class="fs-13">{{ $investment->created_at->format('M-d-Y') }}</span>
-                                            @endforeach
+
+
                                         </div>
 
-                                    <div class="d-inline-block position-relative donut-chart-sale">
-                                        <span class="donut1"
-                                            data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'></span>
-                                        <small class="text-primary"></small>
-                                        <span class="circle bgl-primary"></span>
-                                    </div>
-                                    @else
-                                    <h2 class="fs-36 text-black font-w600">$0</h2>
-                                    @endif
+                                        <div class="d-inline-block position-relative donut-chart-sale">
+                                            <span class="donut1"
+                                                data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'></span>
+                                            <small class="text-primary"></small>
+                                            <span class="circle bgl-primary"></span>
+                                        </div>
+
                                 </div>
                             </div>
                         </div>
@@ -47,9 +46,52 @@
                             <div class="card-body">
                                 <div class="media align-items-center">
                                     <div class="media-body me-3">
-                                        <h2 class="fs-36 text-black font-w600">2,206</h2>
-                                        <p class="fs-18 mb-0 text-black font-w500">Withdrawable</p>
-                                        <span class="fs-13">Returns</span>
+                                        <h2 class="fs-36 text-black font-w600">${{ $totalWithdrawal }}</h2>
+                                        <p class="fs-18 mb-0 text-black font-w500">Total Withdrawal</p>
+
+                                    </div>
+                                    <div class="d-inline-block position-relative donut-chart-sale">
+                                        <span class="donut1"
+                                            data-peity='{ "fill": ["rgb(55, 209, 90)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'></span>
+                                        <small class="text-info"></small>
+                                        <span class="circle bgl-success"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center">
+
+                                        <div class="media-body me-3">
+                                                <h2 class="fs-36 text-black font-w600">
+                                                    ${{ $activeDeposit }}
+                                                </h2>
+                                                <p class="fs-18 mb-0 text-black font-w500">Active Deposit
+                                                </p>
+                                        </div>
+
+                                        <div class="d-inline-block position-relative donut-chart-sale">
+                                            <span class="donut1"
+                                                data-peity='{ "fill": ["rgb(60, 76, 184)", "rgba(236, 236, 236, 1)"],   "innerRadius": 38, "radius": 10}'></span>
+                                            <small class="text-primary"></small>
+                                            <span class="circle bgl-primary"></span>
+                                        </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="media align-items-center">
+                                    <div class="media-body me-3">
+                                        <h2 class="fs-36 text-black font-w600">${{ $totalProfit }}</h2>
+                                        <p class="fs-18 mb-0 text-black font-w500">Total Profit</p>
+
                                     </div>
                                     <div class="d-inline-block position-relative donut-chart-sale">
                                         <span class="donut1"
