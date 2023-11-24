@@ -17,8 +17,7 @@
         <!-- ====== Navbar Section Start -->
         <header x-data="{
             navbarOpen: false,
-            }"
-            class="absolute bg-white left-0 top-0 z-50 w-full">
+        }" class="absolute bg-white left-0 top-0 z-50 w-full">
             <div class="container mx-auto">
                 <div class="relative -mx-4 flex items-center justify-between">
                     <div class="w-60 max-w-full px-4">
@@ -67,23 +66,22 @@
                             </nav>
                         </div>
                         @auth
-                        <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
-                            <a href="/dashboard"
-                                class="rounded-lg bg-pink-600 py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
-                                Account
-                            </a>
-                        </div>
+                            <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+                                <a href="/dashboard"
+                                    class="rounded-lg bg-pink-600 py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
+                                    Account
+                                </a>
+                            </div>
                         @else
-                          <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
-                            <a href="/login"
-                                class="py-3 px-7 text-base font-medium text-dark hover:text-pink-600">
-                                Login
-                            </a>
-                            <a href="/signup"
-                                class="rounded-lg bg-pink-600 py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
-                                Sign Up
-                            </a>
-                        </div>
+                            <div class="hidden justify-end pr-16 sm:flex lg:pr-0">
+                                <a href="/login" class="py-3 px-7 text-base font-medium text-dark hover:text-pink-600">
+                                    Login
+                                </a>
+                                <a href="/signup"
+                                    class="rounded-lg bg-pink-600 py-3 px-7 text-base font-medium text-white hover:bg-opacity-90">
+                                    Sign Up
+                                </a>
+                            </div>
                         @endauth
 
                     </div>
@@ -105,7 +103,9 @@
                             <img src="{{ asset('images/logo/logo.png') }}" alt="logo" class="max-w-full" />
                         </a>
                         <p class="mb-7 text-base text-body-color">
-                            We provide a unique opportunity to make profits online, based on our innovative developments that allow us to conduct risk-free bot trading on the largest cryptocurrency and stock exchanges.
+                            We provide a unique opportunity to make profits online, based on our innovative developments
+                            that allow us to conduct risk-free bot trading on the largest cryptocurrency and stock
+                            exchanges.
                         </p>
                         <p class="flex items-center text-sm font-medium text-dark">
                             <span class="mr-3 text-pink-700">
@@ -277,6 +277,21 @@
     </footer>
     <!-- ====== Footer Section End -->
     {{-- <x-flash-message/> --}}
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/656094feda19b36217906df3/1hg0kc12u';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 
 </html>
