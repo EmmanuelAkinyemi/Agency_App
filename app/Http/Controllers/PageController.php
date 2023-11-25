@@ -53,43 +53,40 @@ class PageController extends Controller
             ->where('status', 'active')
             ->sum('deposit_amount');
 
+        $totalWithdrawal = Investment::where('user_email', $user->email)->where('status', 'closed')->sum('deposit_amount');
+
         // Total withdrawal
-        $totalWithdrawal = Investment::where('user_email', $user->email)
-            ->where('status', 'closed') // Assuming 'closed' status indicates a withdrawal
-            ->sum('deposit_amount');
-
-            $totalProfit = Investment::where('user_email', $user->email)
-            ->where('status', 'closed')
-            ->sum(function ($investment) {
-                // Calculate return based on the updated calculateReturn method
-                $returnDetails = $investment->calculateReturn();
-
-                if ($returnDetails) {
-                    return $returnDetails['return'];
-                }
-
-                return 0;
-            });
+        $totalProfit = Investment::where('user_email', $user->email)
+    ->where('status', 'closed')
+    ->get()
+    ->sum(function ($investment) {
+        $percentage = $this->getPercentageForPlanType($investment->plan_type);
+        // Debugging statements
+        // dd([
+        //     'plan_type' => $investment->plan_type,
+        //     'percentage' => $percentage,
+        //     'calculation' => $investment->deposit_amount * $percentage,
+        // ]);
+        return $investment->deposit_amount * $percentage;
+    });
 
         return view('user.dashboard', compact('user', 'totalDeposit', 'activeDeposit', 'totalWithdrawal', 'totalProfit'));
     }
 
-    private function getPercentageByPlanType($planType)
+    private function getPercentageForPlanType($planType)
     {
         switch ($planType) {
             case 'basic':
                 return 0.30;
             case 'gold':
                 return 0.50;
-            case 'masters':
+            case 'master':
                 return 0.80;
             case 'premium':
                 return 1.00;
-            // Add more cases if needed...
-
+                // Add more cases if needed...
             default:
-                // Handle unsupported plan_type
-                return 0;
+                return 0.0; // Default to 0% for unsupported plan_type
         }
     }
 

@@ -25,41 +25,5 @@ class Investment extends Model
         return $this->belongsTo(User::class, 'user_email', 'email');
     }
 
-    public function calculateReturn()
-    {
-        $percentage = 0;
-
-        switch ($this->plan_type) {
-            case 'basic':
-                $percentage = 0.30;
-                break;
-            case 'gold':
-                $percentage = 0.50;
-                break;
-            case 'master':
-                $percentage = 0.80;
-                break;
-            case 'premium':
-                $percentage = 1.00;
-                break;
-            // Add more cases if needed...
-
-            default:
-                // Handle unsupported plan_type
-                return null;
-        }
-
-        // Calculate return
-        $return = $this->deposit_amount * $percentage;
-        
-        dd([
-            'percentage' => $percentage * 100,
-            'return' => $return,
-        ]);
-
-        return [
-            'percentage' => $percentage * 100,
-            'return' => $return,
-        ];
-    }
+   
 }

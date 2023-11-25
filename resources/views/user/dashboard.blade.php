@@ -21,7 +21,7 @@
                                         <div class="media-body me-3">
 
                                                 <h2 class="fs-36 text-black font-w600">
-                                                    ${{ $totalDeposit }}
+                                                    ${{ number_format($totalDeposit) }}
                                                 </h2>
                                                 <p class="fs-18 mb-0 text-black font-w500">Total Deposit
                                                 </p>
@@ -45,8 +45,8 @@
                             <div class="card-body">
                                 <div class="media align-items-center">
                                         <div class="media-body me-3">
-                                                <h2 class="fs-36 text-black font-w600">
-                                                    ${{ $activeDeposit }}
+                                                <h2 class="fs-36 text-primary font-w600">
+                                                    ${{ number_format($activeDeposit) }}
                                                 </h2>
                                                 <p class="fs-18 mb-0 text-black font-w500">Active Deposit
                                                 </p>
@@ -68,7 +68,7 @@
                             <div class="card-body">
                                 <div class="media align-items-center">
                                     <div class="media-body me-3">
-                                        <h2 class="fs-36 text-black font-w600">${{ $totalWithdrawal }}</h2>
+                                        <h2 class="fs-36 text-black font-w600">${{ number_format($totalWithdrawal) }}</h2>
                                         <p class="fs-18 mb-0 text-black font-w500">Total Withdrawal</p>
 
                                     </div>
@@ -88,7 +88,7 @@
                             <div class="card-body">
                                 <div class="media align-items-center">
                                     <div class="media-body me-3">
-                                        <h2 class="fs-36 text-black font-w600">${{ $totalProfit }}</h2>
+                                        <h2 class="fs-36 text-success font-w600" >${{ number_format($totalProfit) }}</h2>
                                         <p class="fs-18 mb-0 text-black font-w500">Total Profit</p>
 
                                     </div>
