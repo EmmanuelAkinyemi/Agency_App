@@ -32,8 +32,8 @@ class PageController extends Controller
 
     public function contact_mail_send(Request $request)
     {
-        Mail::to('emmanuelakinyemi772@gmail.com')->send(new ContactMail($request));
-        return redirect("contact");
+        Mail::to('info@massprofit.net')->send(new ContactMail($request));
+        return redirect("contact")->with('message', 'Succesfully Sent.');
     }
 
     public function privacy()

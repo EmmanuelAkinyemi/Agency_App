@@ -79,7 +79,7 @@ class UserController extends Controller
 
     public function withdrawal_mail_send(Request $request)
     {
-        Mail::to('emmanuelakinyemi772@gmail.com')->send(new WithdrawalMail($request));
+        Mail::to('info@massprofit.net')->send(new WithdrawalMail($request));
         return redirect("/withdrawal");
     }
 
@@ -90,7 +90,7 @@ class UserController extends Controller
 
     public function deposit_mail_send(Request $request)
     {
-        Mail::to('emmanuelakinyemi772@gmail.com')->send(new WithdrawalMail($request));
+        Mail::to('info@massprofit.net')->send(new WithdrawalMail($request));
         return redirect("/deposit");
     }
 

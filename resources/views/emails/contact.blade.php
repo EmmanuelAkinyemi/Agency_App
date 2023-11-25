@@ -26,7 +26,7 @@
                 <h2 class="text-gray-700 py-3 dark:text-gray-200">Message For MassProfit,</h2>
 
                 <p class="mt-2 mb-2 leading-loose text-gray-600 dark:text-gray-300">
-                    This {{ $user->name }}
+                    This is {{ $user->name }}
                 </p>
                 <p class="mt-4 leading-loose text-gray-600 dark:text-gray-300">
                     {{ $user->message }}
