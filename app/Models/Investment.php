@@ -36,7 +36,7 @@ class Investment extends Model
             case 'gold':
                 $percentage = 0.50;
                 break;
-            case 'masters':
+            case 'master':
                 $percentage = 0.80;
                 break;
             case 'premium':
@@ -51,6 +51,11 @@ class Investment extends Model
 
         // Calculate return
         $return = $this->deposit_amount * $percentage;
+        
+        dd([
+            'percentage' => $percentage * 100,
+            'return' => $return,
+        ]);
 
         return [
             'percentage' => $percentage * 100,

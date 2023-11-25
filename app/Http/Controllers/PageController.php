@@ -58,10 +58,39 @@ class PageController extends Controller
             ->where('status', 'closed') // Assuming 'closed' status indicates a withdrawal
             ->sum('deposit_amount');
 
-        // Total profit
-        $totalProfit = $totalWithdrawal - $totalDeposit;
+            $totalProfit = Investment::where('user_email', $user->email)
+            ->where('status', 'closed')
+            ->sum(function ($investment) {
+                // Calculate return based on the updated calculateReturn method
+                $returnDetails = $investment->calculateReturn();
+
+                if ($returnDetails) {
+                    return $returnDetails['return'];
+                }
+
+                return 0;
+            });
 
         return view('user.dashboard', compact('user', 'totalDeposit', 'activeDeposit', 'totalWithdrawal', 'totalProfit'));
+    }
+
+    private function getPercentageByPlanType($planType)
+    {
+        switch ($planType) {
+            case 'basic':
+                return 0.30;
+            case 'gold':
+                return 0.50;
+            case 'masters':
+                return 0.80;
+            case 'premium':
+                return 1.00;
+            // Add more cases if needed...
+
+            default:
+                // Handle unsupported plan_type
+                return 0;
+        }
     }
 
     public function adminProfile()
