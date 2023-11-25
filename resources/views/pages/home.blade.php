@@ -1023,9 +1023,9 @@
                                 <div class="w-full items-center md:flex">
                                     <div
                                         class="relative mb-12 w-full max-w-[310px] md:mr-12 md:mb-0 md:max-w-[250px] lg:mr-14 lg:max-w-[280px] 2xl:mr-16">
-                                        <img src="{{ asset('https://images.unsplash.com/photo-1506277886164-e25aa3f4ef7f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJsYWNrJTIwbWFufGVufDB8fDB8fHww') }}"
+                                        <img src="{{ asset('images/testimonials/huang.jpeg') }}"
                                             alt="image" class="w-full" />
-                                        <span class="absolute -top-6 -left-6 z-[-1] hidden sm:block">
+                                        <span class="absolute -top-6 -left-6 z-[-1]   hidden sm:block">
                                             <svg width="77" height="77" viewBox="0 0 77 77" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="1.66343" cy="74.5221" r="1.66343"
@@ -1118,11 +1118,11 @@
                                                 MassProfit.net has truly been a game-changer for my business. The innovative
                                                 strategies and personalized solutions they provided catapulted us to new
                                                 heights. Thanks to MassProfit.net, we've experienced remarkable growth and
-                                                profitability. David Khal.
+                                                profitability. Huang Chri.
                                             </p>
 
                                             <h4 class="text-xl font-semibold text-dark">
-                                                David Khal
+                                                Huang Chris
                                             </h4>
                                         </div>
                                     </div>
